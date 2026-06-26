@@ -1,4 +1,4 @@
-﻿{
+{
   "rewrites": [
     { "source": "/blog/:slug", "destination": "/ai-article/:slug.html" }
   ]
