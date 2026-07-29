@@ -15,14 +15,14 @@
   <meta property="og:title" content="TechNext Asia — Odoo ERP & AI Automations for Growing Businesses"/>
   <meta property="og:description" content="Certified Odoo Partner delivering ERP implementation and AI automations for growing businesses worldwide. Go live in 4–8 weeks."/>
   <meta property="og:url" content="https://technextsg.github.io/TechNext-Landing-Page/"/>
-  <meta property="og:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/TechNext-Logo.png"/>
+  <meta property="og:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png"/>
   <meta property="og:site_name" content="TechNext Asia"/>
   <meta property="og:locale" content="en_US"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="TechNext Asia — Odoo ERP & AI Automations"/>
   <meta name="twitter:description" content="Certified Odoo Partner. ERP + AI automations for growing businesses worldwide. Go live in 4–8 weeks."/>
-  <meta name="twitter:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/TechNext-Logo.png"/>
+  <meta name="twitter:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png"/>
   <!-- Performance: preconnect + fonts (matches technext.asia's type system) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -34,7 +34,7 @@
     "@type":"Organization",
     "name":"TechNext Asia",
     "url":"https://technextsg.github.io/TechNext-Landing-Page/",
-    "logo":"https://technextsg.github.io/TechNext-Landing-Page/images/TechNext-Logo.png",
+    "logo":"https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png",
     "description":"Certified Odoo Partner delivering ERP implementation and AI automations for growing businesses worldwide.",
     "email":"hello@technext.asia",
     "areaServed":"Worldwide",
@@ -64,7 +64,8 @@
       --border:#e2e8f0;
       --white:#fff;
       --shadow:0 4px 20px rgba(26,26,46,.06);
-      --shadow-md:0 12px 30px rgba(49,103,202,.16);
+      --shadow-md:0 12px 30px rgba(49,103,202,.34);
+      --shadow-card-hover:0 20px 44px rgba(49,103,202,.14);
       --ease:cubic-bezier(.22,1,.36,1);
       --sans:'DM Sans',sans-serif;
       --heading:'Montserrat',var(--sans);
@@ -91,12 +92,35 @@
     .sec-head.center{text-align:center;}
     .sec-head.center .section-sub{margin:0 auto;}
 
-    /* Buttons — pill shape, matches technext.asia */
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--sans);font-weight:700;font-size:15px;padding:14px 32px;border-radius:100px;border:none;cursor:pointer;transition:transform .26s var(--ease),box-shadow .26s var(--ease),background .26s var(--ease);}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);background:var(--blue-dk);}
+    /* Buttons — pill shape, gradient + sheen sweep, matches technext.asia */
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff;font-family:var(--sans);font-weight:700;font-size:15px;padding:14px 32px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(49,103,202,.3);transition:transform .26s var(--ease),box-shadow .26s var(--ease),background .26s var(--ease),filter .26s var(--ease);}
+    .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dk),var(--blue));transform:translateY(-2px);box-shadow:0 12px 30px rgba(49,103,202,.34);filter:saturate(1.06);}
     .btn-primary.btn-sm{padding:10px 22px;font-size:13px;}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-family:var(--sans);font-weight:600;font-size:15px;padding:13px 30px;border-radius:100px;border:1.5px solid var(--border);cursor:pointer;transition:transform .22s var(--ease),border-color .22s var(--ease),background .22s var(--ease);}
-    .btn-outline:hover{transform:translateY(-2px);border-color:var(--blue);background:var(--blue-pale);box-shadow:0 8px 20px rgba(26,26,46,.1);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-family:var(--sans);font-weight:600;font-size:15px;padding:13px 30px;border-radius:100px;border:1.5px solid var(--border);cursor:pointer;transition:transform .22s var(--ease),border-color .22s var(--ease),background .22s var(--ease),box-shadow .22s var(--ease);}
+    .btn-outline:hover{transform:translateY(-2px);border-color:var(--blue);background:var(--blue-pale);box-shadow:0 8px 20px rgba(26,26,46,.12);}
+
+    /* Sheen sweep — a skewed highlight that travels across the button on hover */
+    .btn-primary,.btn-outline,.bk-confirm-btn,.bk-done-btn,.spick,.mn-cta{position:relative;overflow:hidden;isolation:isolate;}
+    .btn-primary::after,.btn-outline::after,.bk-confirm-btn::after,.bk-done-btn::after,.mn-cta::after{
+      content:'';position:absolute;top:0;bottom:0;left:-160%;width:58%;
+      transform:skewX(-20deg);pointer-events:none;z-index:2;
+      background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.50) 50%,rgba(255,255,255,0) 100%);
+    }
+    .btn-outline::after{background:linear-gradient(100deg,rgba(49,103,202,0) 0%,rgba(49,103,202,.22) 50%,rgba(49,103,202,0) 100%);}
+    .btn-primary:hover::after,.btn-outline:hover::after,.bk-confirm-btn:hover::after,
+    .bk-done-btn:hover::after,.mn-cta:hover::after,
+    .btn-primary:focus-visible::after,.btn-outline:focus-visible::after{animation:tn-sheen .85s var(--ease);}
+    @keyframes tn-sheen{from{left:-160%;} to{left:165%;}}
+
+    /* Press + keyboard focus */
+    .btn-primary:active,.btn-outline:active,.bk-confirm-btn:active,.bk-done-btn:active,.mn-cta:active,.spick:active{
+      transform:translateY(0) scale(.975);box-shadow:0 3px 10px rgba(49,103,202,.24);transition-duration:.08s;
+    }
+    .btn-primary:focus-visible,.btn-outline:focus-visible{outline:3px solid var(--blue-dk);outline-offset:3px;}
+    @media(prefers-reduced-motion:reduce){
+      .btn-primary::after,.btn-outline::after,.bk-confirm-btn::after,.bk-done-btn::after,.mn-cta::after{display:none;}
+      .btn-primary,.btn-outline,.svc-card,.proc-card,.testi-card{transition:none;}
+    }
 
     /* Reveal-on-scroll */
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
@@ -109,7 +133,7 @@
     nav.nav-hidden{transform:translateY(-100%);}
     .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
     .logo{display:flex;align-items:center;flex-shrink:0;}
-    .logo img{height:36px;width:auto;display:block;}
+    .logo img{height:38px;width:auto;display:block;}
     .nav-links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center;}
     .nav-links a{font-size:14px;font-weight:600;color:var(--text);transition:color .2s;}
     .nav-links a:hover{color:var(--blue);}
@@ -126,14 +150,53 @@
 
     /* ── HERO ─────────────────────────────────────────────── */
     #hero{padding:150px 0 88px;position:relative;}
-    .hero-inner{max-width:700px;}
+    .hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
     .hero-h1{font-family:var(--heading);font-size:clamp(38px,5vw,58px);font-weight:700;line-height:1.15;color:var(--text);margin-bottom:22px;letter-spacing:-.01em;}
     .hero-desc{font-size:18px;color:var(--muted-2);line-height:1.75;margin-bottom:36px;max-width:560px;}
-    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
     .hero-trust{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-    .hero-odoo-logo{height:34px;width:auto;opacity:.75;}
+    .hero-odoo-logo{height:70px;width:auto;}
     .hero-trust-sep{width:1px;height:20px;background:var(--border);flex-shrink:0;}
     .hero-trust-text{font-size:14px;font-weight:500;color:var(--muted);}
+
+    /* ── HERO FORM ─────────────────────────────────────────── */
+    .hero-form-wrap{background:var(--white);border-radius:20px;box-shadow:0 20px 60px rgba(26,26,46,.12);padding:36px 32px 30px;border:1px solid var(--border);}
+    .form-heading{font-family:var(--heading);font-size:24px;font-weight:700;color:var(--text);text-align:center;margin-bottom:6px;}
+    .form-subhead{font-size:14px;color:var(--muted);text-align:center;margin-bottom:22px;}
+    .form-progress{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;}
+    .fp-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s,transform .3s;}
+    .fp-dot.active{background:var(--blue);transform:scale(1.35);}
+    .fp-dot.done{background:var(--blue);}
+    .fp-line{width:28px;height:2px;background:var(--border);border-radius:1px;transition:background .3s;}
+    .fp-line.done{background:var(--blue);}
+    .fstep{display:none;}
+    .fstep.active{display:block;}
+    .service-picks{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+    .spick{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;background:var(--blue-pale);transition:border-color .2s,background .2s,transform .2s;user-select:none;}
+    .spick:hover{border-color:var(--blue);transform:translateX(2px);}
+    .spick.sel{border-color:var(--blue);background:var(--blue-light);box-shadow:0 4px 18px rgba(49,103,202,.15);}
+    .spick-icon{width:38px;height:38px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--muted);transition:color .2s;}
+    .spick.sel .spick-icon{color:var(--blue);}
+    .spick-icon svg{width:20px;height:20px;}
+    .spick-body{flex:1;}
+    .spick-label{font-weight:700;font-size:14.5px;color:var(--text);line-height:1.2;}
+    .spick-desc{font-size:12px;color:var(--muted);}
+    .spick-chk{margin-left:auto;width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:11px;color:#fff;}
+    .spick.sel .spick-chk{background:var(--blue);border-color:var(--blue);}
+    .ff{display:flex;flex-direction:column;gap:5px;margin-bottom:13px;}
+    .ff label{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+    .ff input,.ff textarea{background:var(--blue-pale);border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s,background .2s;width:100%;box-sizing:border-box;}
+    .ff input::placeholder,.ff textarea::placeholder{color:#9CA3AF;}
+    .ff input:focus,.ff textarea:focus{border-color:var(--blue);background:#fff;}
+    .ff textarea{min-height:70px;resize:vertical;}
+    .btn-block{width:100%;justify-content:center;margin-top:4px;}
+    .btn-back{background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:4px;padding:0;margin-bottom:14px;font-family:var(--sans);transition:color .2s;}
+    .btn-back:hover{color:var(--text);}
+    .next-note{text-align:center;font-size:11px;color:var(--muted);margin-top:8px;}
+    .form-success{display:none;text-align:center;padding:10px 0;}
+    .fs-icon{width:56px;height:56px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--blue);}
+    .fs-icon svg{width:28px;height:28px;}
+    .fs-title{font-family:var(--heading);font-size:19px;font-weight:700;color:var(--text);margin-bottom:6px;}
+    .fs-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
 
     /* ── TRUST BAR ────────────────────────────────────────── */
     #trust{padding:24px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
@@ -156,7 +219,7 @@
     #services{padding:96px 0;}
     .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch;}
     .svc-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:36px 32px;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;}
-    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--blue);}
+    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);border-color:rgba(49,103,202,.28);}
     .svc-icon{width:52px;height:52px;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--blue);}
     .svc-icon svg{width:26px;height:26px;}
     .svc-name{font-family:var(--heading);font-size:22px;font-weight:700;color:var(--text);margin-bottom:10px;}
@@ -192,51 +255,12 @@
     .vid-cta{text-align:center;margin-top:44px;}
     .vid-cta p{font-size:17px;color:var(--muted-2);margin-bottom:20px;}
 
-    /* ── WHY ──────────────────────────────────────────────── */
-    #why{padding:96px 0;}
-    .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-    .why-list{display:flex;flex-direction:column;gap:10px;}
-    .why-item{display:flex;gap:14px;align-items:center;padding:16px 18px;background:var(--white);border-radius:12px;border:1.5px solid var(--border);transition:all .25s;cursor:pointer;}
-    .why-item:hover{border-color:var(--blue);background:var(--blue-pale);}
-    .why-item.active{border-color:var(--blue);background:var(--blue-pale);box-shadow:0 4px 18px rgba(49,103,202,.12);}
-    .why-icon{width:42px;height:42px;background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue);transition:background .25s,color .25s;}
-    .why-icon svg{width:22px;height:22px;}
-    .why-item.active .why-icon{background:var(--blue);color:#fff;}
-    .why-body{flex:1;}
-    .why-title{font-family:var(--heading);font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;}
-    .why-text{font-size:14.5px;color:var(--muted);line-height:1.5;}
-    .why-chevron{font-size:18px;color:var(--muted);transition:transform .25s,color .25s;flex-shrink:0;}
-    .why-item.active .why-chevron{color:var(--blue);transform:translateX(4px);}
-    @keyframes wp-in{from{opacity:0;transform:translateX(18px);}to{opacity:1;transform:translateX(0);}}
-    .why-panel{display:none;}
-    .why-panel.active{display:block;animation:wp-in .35s ease both;}
-    .wp-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px;box-shadow:var(--shadow);}
-    .wp-hd{display:flex;flex-direction:row;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-    .wp-hd-body{flex:1;}
-    .wp-hd-icon{width:52px;height:52px;background:var(--blue);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;}
-    .wp-hd-icon svg{width:26px;height:26px;}
-    .wp-hd-title{font-family:var(--heading);font-size:20px;font-weight:700;color:var(--text);line-height:1.2;}
-    .wp-hd-badge{font-size:12px;font-weight:700;background:var(--blue-light);color:var(--blue);padding:5px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;margin-top:6px;}
-    .wp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-    .wp-stat{text-align:center;padding:16px 8px;background:var(--blue-pale);border-radius:12px;}
-    .wp-stat-num{font-family:var(--heading);font-size:26px;font-weight:700;color:var(--blue);line-height:1;}
-    .wp-stat-lbl{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500;}
-    .wp-pills{display:flex;flex-wrap:wrap;gap:7px;}
-    .wp-pill{font-size:13px;font-weight:600;padding:5px 12px;background:var(--blue-light);color:var(--blue);border-radius:100px;}
-    .wp-note{font-size:14px;color:var(--muted);line-height:1.7;padding:14px 18px;background:var(--blue-pale);border-radius:12px;border-left:3px solid var(--blue);}
-    .wp-countries{display:flex;flex-direction:column;gap:9px;}
-    .wp-country{display:flex;gap:12px;align-items:flex-start;padding:13px;background:var(--blue-pale);border-radius:12px;border:1px solid var(--border);transition:border-color .2s,transform .2s;}
-    .wp-country:hover{border-color:var(--blue);transform:translateX(3px);}
-    .wp-flag{font-size:22px;flex-shrink:0;line-height:1.3;}
-    .wp-c-name{font-family:var(--heading);font-size:15px;font-weight:700;color:var(--text);line-height:1.3;}
-    .wp-c-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
-    .wp-c-tag{font-size:11px;font-weight:600;padding:2px 8px;background:var(--white);color:var(--muted-2);border-radius:100px;border:1px solid var(--border);}
 
     /* ── PROCESS ──────────────────────────────────────────── */
     #process{padding:96px 0;background:var(--blue-pale);}
     .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
     .proc-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:28px 24px;position:relative;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
-    .proc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+    .proc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);border-color:rgba(49,103,202,.25);}
     .proc-num{width:38px;height:38px;background:var(--blue);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:700;font-size:16px;margin-bottom:18px;}
     .proc-title{font-family:var(--heading);font-size:17px;font-weight:700;color:var(--text);margin-bottom:8px;}
     .proc-text{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
@@ -247,7 +271,7 @@
     #testimonials{padding:96px 0;}
     .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
     .testi-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:32px 28px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
-    .testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+    .testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);border-color:rgba(49,103,202,.25);}
     .testi-badge{display:inline-flex;align-items:center;gap:5px;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;margin-bottom:14px;}
     .stars{display:flex;gap:3px;margin-bottom:14px;}
     .star{color:var(--amber);font-size:16px;}
@@ -274,15 +298,17 @@
     .cta-inner .eyebrow{color:rgba(255,255,255,.75);}
     .cta-inner .section-title{color:#fff;}
     .cta-inner .section-sub{color:rgba(255,255,255,.82);margin:0 auto 32px;}
-    .cta-inner .btn-primary{background:#fff;color:var(--blue);}
-    .cta-inner .btn-primary:hover{background:rgba(255,255,255,.9);box-shadow:0 12px 30px rgba(0,0,0,.2);}
+    .cta-inner .btn-primary{background:#fff;color:var(--blue);box-shadow:0 6px 24px rgba(0,0,0,.16);}
+    .cta-inner .btn-primary:hover{background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.24);filter:none;}
+    /* white button sits on blue — the sheen must be blue to be visible */
+    .cta-inner .btn-primary::after{background:linear-gradient(100deg,rgba(49,103,202,0) 0%,rgba(49,103,202,.28) 50%,rgba(49,103,202,0) 100%);}
     .cta-note{margin-top:18px;font-size:13px;color:rgba(255,255,255,.7);}
 
     /* ── FOOTER — matches technext.asia: dark, compact, single row ── */
     footer{padding:16px 0;background:#1a1a2e;}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
     .footer-brand{display:flex;align-items:center;flex-shrink:0;}
-    .footer-brand img{height:28px;width:auto;filter:brightness(0) invert(1);}
+    .footer-brand img{height:30px;width:auto;}
     .footer-copy{font-size:13px;color:rgba(255,255,255,.7);}
     .footer-links{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
     .footer-links a{font-size:13px;font-weight:400;color:rgba(255,255,255,.7);transition:color .2s;}
@@ -295,15 +321,15 @@
     .wa-float:hover{transform:scale(1.08);}
     .wa-float svg{width:26px;height:26px;fill:#fff;}
 
-    /* ── BOOKING MODAL ────────────────────────────────────── */
+    /* ── BOOKING MODAL — embeds the live Odoo scheduling page directly,
+       so occupied slots are always the real, current calendar state ── */
     .bk-overlay{position:fixed;inset:0;background:rgba(26,26,46,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1001;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
     .bk-overlay.open{opacity:1;pointer-events:auto;}
-    .bk-modal{display:grid;grid-template-columns:230px 1fr;grid-template-rows:1fr auto;grid-template-areas:"left cal" "left foot";position:relative;border-radius:20px;width:min(940px,96vw);overflow:hidden;box-shadow:0 32px 96px rgba(0,0,0,.22);transform:scale(.95) translateY(20px);transition:transform .32s cubic-bezier(.34,1.56,.64,1);background:#fff;}
+    .bk-modal{display:grid;grid-template-columns:230px 1fr;position:relative;border-radius:20px;width:min(1000px,96vw);height:min(680px,90vh);overflow:hidden;box-shadow:0 32px 96px rgba(0,0,0,.22);transform:scale(.95) translateY(20px);transition:transform .32s cubic-bezier(.34,1.56,.64,1);background:#fff;}
     .bk-overlay.open .bk-modal{transform:scale(1) translateY(0);}
-    .bk-modal:has(.bk-right.visible){grid-template-columns:230px 1fr 190px;grid-template-areas:"left cal right" "left foot right";}
-    .bk-left{background:linear-gradient(160deg,var(--blue) 0%,var(--blue-2) 100%);grid-area:left;width:230px;padding:24px 22px;display:flex;flex-direction:column;position:relative;}
+    .bk-left{background:linear-gradient(160deg,var(--blue) 0%,var(--blue-2) 100%);width:230px;padding:24px 22px;display:flex;flex-direction:column;position:relative;}
     .bk-left-logo{margin-bottom:26px;}
-    .bk-left-logo img{height:32px;width:auto;filter:brightness(0) invert(1);}
+    .bk-left-logo img{height:30px;width:auto;}
     .bk-left-title{font-family:var(--heading);font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:12px;}
     .bk-left-desc{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:0;}
     .bk-left-meta{display:flex;flex-direction:column;gap:14px;margin-top:auto;padding-top:28px;}
@@ -311,82 +337,27 @@
     .bk-left-meta-row svg{width:16px;height:16px;flex-shrink:0;opacity:.75;}
     .bk-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);font-size:15px;line-height:1;transition:background .15s;}
     .bk-close:hover{background:rgba(255,255,255,.2);color:#fff;}
-    .bk-mid{background:#fff;grid-area:cal;display:flex;flex-direction:column;overflow-y:auto;}
-    .bk-cal-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 10px;}
-    .bk-cal-month{font-family:var(--heading);font-size:18px;font-weight:700;color:var(--text);}
-    .bk-cal-month span{color:var(--blue);}
-    .bk-cal-arrows{display:flex;gap:8px;}
-    .bk-cal-arr{width:28px;height:28px;border:1.5px solid var(--border);border-radius:8px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .13s;font-size:14px;}
-    .bk-cal-arr:hover{background:var(--blue-pale);border-color:var(--blue);color:var(--blue);}
-    .bk-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:0 14px 10px;}
-    .bk-cal-dow{text-align:center;font-size:10px;font-weight:700;color:var(--muted);padding:2px 0 7px;letter-spacing:.06em;}
-    .bk-cal-day{height:44px;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;transition:background .12s,color .12s;color:var(--muted);flex-direction:column;gap:2px;}
-    .bk-cal-day.bk-avail{color:var(--text);}
-    .bk-cal-day.bk-avail:not(.bk-sel):hover{background:var(--blue-pale);color:var(--blue);}
-    .bk-cal-day.bk-today{outline:2px solid var(--blue);outline-offset:-2px;color:var(--blue);font-weight:700;}
-    .bk-cal-day.bk-sel{background:var(--blue) !important;color:#fff !important;font-weight:700;}
-    .bk-cal-day.bk-disabled{color:#e5e7eb;cursor:default;pointer-events:none;}
-    .bk-day-dot{width:4px;height:4px;border-radius:50%;}
-    .bk-day-dot-avail{background:var(--green);}
-    .bk-day-dot-low{background:var(--amber);}
-    .bk-day-dot-full{background:#e5e7eb;}
-    .bk-right{grid-area:right;border-left:1px solid var(--border);padding:18px 14px;display:none;flex-direction:column;overflow-y:auto;}
-    .bk-right.visible{display:flex;}
-    .bk-right-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-    .bk-right-date{font-family:var(--heading);font-size:14px;font-weight:700;color:var(--text);}
-    .bk-right-fmt{display:flex;gap:4px;}
-    .bk-fmt-btn{font-size:11px;font-weight:700;padding:4px 9px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;}
-    .bk-fmt-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
-    .bk-slots-list{display:flex;flex-direction:column;gap:6px;}
-    .bk-slot{padding:9px 10px;border-radius:9px;border:1.5px solid var(--border);font-size:13px;font-weight:600;color:var(--text);cursor:pointer;text-align:center;transition:all .15s;}
-    .bk-slot:hover{border-color:var(--blue);background:var(--blue-pale);}
-    .bk-slot.bk-sel{background:var(--blue);border-color:var(--blue);color:#fff;}
-    .bk-slot.bk-recommended{border-color:var(--green);}
-    .bk-slot.bk-booked{opacity:.4;cursor:not-allowed;}
-    .bk-full-wrap{text-align:center;padding:20px 8px;}
-    .bk-full-title{font-family:var(--heading);font-weight:700;margin:8px 0 4px;}
-    .bk-full-sub{font-size:13px;color:var(--muted);margin-bottom:14px;}
-    .bk-next-btn{background:var(--blue-pale);border:1.5px solid var(--blue);color:var(--blue);border-radius:9px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;}
-    .bk-foot{grid-area:foot;padding:10px 18px 14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px;flex-shrink:0;background:#fff;}
-    .bk-foot-row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-    .bk-sel-info{font-size:12px;color:var(--muted);line-height:1.4;}
-    .bk-sel-info strong{color:var(--text);}
-    .bk-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-    .bk-email-wrap{display:flex;flex-direction:column;gap:3px;}
-    .bk-email-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
-    .bk-email-input{width:100%;padding:8px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:var(--sans);font-size:12px;color:var(--text);background:#fff;outline:none;transition:border-color .15s;box-sizing:border-box;}
-    .bk-email-input:focus{border-color:var(--blue);}
-    .bk-email-input::placeholder{color:var(--muted);}
-    .bk-confirm-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--blue);color:#fff;font-family:var(--sans);font-weight:700;font-size:13px;padding:10px 20px;border-radius:100px;border:none;cursor:pointer;transition:background .15s;white-space:nowrap;}
-    .bk-confirm-btn:hover:not(:disabled){background:var(--blue-dk);}
-    .bk-confirm-btn:disabled{opacity:.3;cursor:not-allowed;}
-    .bk-success{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 36px;background:#fff;}
-    .bk-success.show{display:flex;position:absolute;inset:0;z-index:2;overflow:hidden;}
-    .bk-success-anim{width:64px;height:64px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:16px;}
-    .bk-success-anim svg{width:32px;height:32px;}
-    .bk-success-title{font-family:var(--heading);font-size:24px;font-weight:700;color:var(--text);margin-bottom:8px;}
-    .bk-success-sub{font-size:14px;color:var(--muted);line-height:1.6;max-width:340px;margin-bottom:20px;}
-    .bk-success-detail{background:var(--blue-pale);border-radius:14px;padding:18px 24px;margin-bottom:22px;}
-    .bk-success-detail-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
-    .bk-success-detail-slot{font-family:var(--heading);font-size:18px;font-weight:700;color:var(--blue);margin-bottom:4px;}
-    .bk-success-detail-meta{font-size:12px;color:var(--muted);}
-    .bk-done-btn{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;font-weight:700;font-size:14px;padding:11px 26px;border-radius:100px;border:none;cursor:pointer;}
+    .bk-iframe-wrap{position:relative;background:#fff;height:100%;}
+    .bk-iframe{width:100%;height:100%;border:none;display:block;}
+    .bk-iframe-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;font-weight:600;background:#fff;}
 
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media(max-width:900px){
       .nav-links{display:none;}
       .hamburger{display:flex;}
-      .services-grid,.why-inner,.testi-grid{grid-template-columns:1fr;}
+      .services-grid,.testi-grid,.hero-inner{grid-template-columns:1fr;}
       .proc-grid{grid-template-columns:1fr 1fr;}
       .stats-grid{grid-template-columns:1fr 1fr;}
       .stat-item{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:20px;}
-      .bk-modal{grid-template-columns:1fr!important;grid-template-areas:"cal" "foot"!important;max-height:92vh;}
+      .bk-modal{grid-template-columns:1fr!important;height:92vh!important;}
       .bk-left{display:none;}
-      .bk-modal:has(.bk-right.visible){grid-template-areas:"cal" "right" "foot"!important;}
-      .bk-right{border-left:none;border-top:1px solid var(--border);}
     }
     @media(max-width:600px){
       .proc-grid{grid-template-columns:1fr;}
+      .logo img{height:26px;}
+      .hero-odoo-logo{height:54px;}
+      /* nav CTA would squash against the logo here — the hamburger menu carries it instead */
+      .nav-inner > .btn-primary{display:none;}
       .trust-row{gap:8px;}
       .trust-item{padding:0 14px;font-size:12.5px;}
       .footer-inner{flex-direction:column;text-align:center;}
@@ -397,10 +368,9 @@
 
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="logo"><img src="images/TechNext-Logo.png" alt="TechNext"/></a>
+      <a href="#hero" class="logo"><img src="images/technext-logo-blue.png" alt="TechNext"/></a>
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -409,7 +379,6 @@
     </div>
     <div class="mobile-nav" id="mobileNav">
       <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
       <a href="#" class="mn-cta" onclick="event.preventDefault();openBkModal();">Book Free Demo</a>
@@ -419,16 +388,87 @@
   <!-- ── HERO ───────────────────────────────────────────────── -->
   <section id="hero">
     <div class="container hero-inner">
-      <h1 class="hero-h1">Your Business Is Growing.<br/>Your Systems Should <span class="text-blue">Keep Up.</span></h1>
-      <p class="hero-desc">Manual invoicing, disconnected spreadsheets, and growing admin overhead are slowing you down. TechNext implements Odoo ERP and AI automations so your team can stop firefighting and start scaling.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn-primary" onclick="event.preventDefault();openBkModal();">Book Free Demo →</a>
-        <a href="#services" class="btn-outline">See Our Services</a>
+      <div class="hero-content">
+        <h1 class="hero-h1">Your Business Is Growing.<br/>Your Systems Should <span class="text-blue">Keep Up.</span></h1>
+        <p class="hero-desc">Manual invoicing, disconnected spreadsheets, and growing admin overhead are slowing you down. TechNext implements Odoo ERP and AI automations so your team can stop firefighting and start scaling.</p>
+        <div class="hero-trust">
+          <img src="images/odoo_logo.png" alt="Odoo Certified Partner" class="hero-odoo-logo"/>
+          <span class="hero-trust-sep"></span>
+          <span class="hero-trust-text">Trusted by clients around the world</span>
+        </div>
       </div>
-      <div class="hero-trust">
-        <img src="images/odoo_logo.png" alt="Odoo Certified Partner" class="hero-odoo-logo"/>
-        <span class="hero-trust-sep"></span>
-        <span class="hero-trust-text">Trusted by clients around the world</span>
+
+      <div class="hero-form-wrap" id="heroForm">
+        <div class="form-heading" id="formHeading">Book a Free Demo</div>
+        <div class="form-subhead" id="formSubhead">1 hour. No commitment. We show you exactly how it works.</div>
+
+        <div class="form-progress">
+          <div class="fp-dot active" id="dot1"></div>
+          <div class="fp-line" id="line1"></div>
+          <div class="fp-dot" id="dot2"></div>
+        </div>
+
+        <!-- Step 1: pick service -->
+        <div class="fstep active" id="fstep1">
+          <div class="service-picks">
+            <div class="spick" data-val="odoo" onclick="pickService(this)">
+              <div class="spick-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/></svg></div>
+              <div class="spick-body">
+                <div class="spick-label">Odoo ERP Implementation</div>
+                <div class="spick-desc">Set up Accounting, Inventory, CRM, HR &amp; more</div>
+              </div>
+              <div class="spick-chk"></div>
+            </div>
+            <div class="spick" data-val="ai" onclick="pickService(this)">
+              <div class="spick-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg></div>
+              <div class="spick-body">
+                <div class="spick-label">AI Automations</div>
+                <div class="spick-desc">Chatbots, auto-invoicing, smart workflows</div>
+              </div>
+              <div class="spick-chk"></div>
+            </div>
+            <div class="spick" data-val="both" onclick="pickService(this)">
+              <div class="spick-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg></div>
+              <div class="spick-body">
+                <div class="spick-label">Both — Full Package</div>
+                <div class="spick-desc">ERP + AI for maximum operational impact</div>
+              </div>
+              <div class="spick-chk"></div>
+            </div>
+          </div>
+          <button class="btn-primary btn-block" onclick="goStep2()" id="btnNext" disabled>Continue →</button>
+          <div class="next-note">Select one option to continue</div>
+        </div>
+
+        <!-- Step 2: contact details -->
+        <div class="fstep" id="fstep2">
+          <button class="btn-back" onclick="goStep1()">← Back</button>
+          <div class="ff">
+            <label for="f-fname">Name</label>
+            <input type="text" id="f-fname" placeholder="Your full name" required/>
+          </div>
+          <div class="ff">
+            <label for="f-phone">Contact Number</label>
+            <input type="tel" id="f-phone" placeholder="+65 9123 4567"/>
+          </div>
+          <div class="ff">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" placeholder="john@company.com" required/>
+          </div>
+          <div class="ff">
+            <label for="f-company">Company Name <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+            <input type="text" id="f-company" placeholder="Your Company Pte. Ltd."/>
+          </div>
+          <button class="btn-primary btn-block" onclick="submitHeroForm()">Continue to Booking →</button>
+        </div>
+
+        <!-- Success: transitions straight into the live booking calendar -->
+        <div class="form-success" id="fSuccess">
+          <div class="fs-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg></div>
+          <div class="fs-title">Great — Let's Get You Booked</div>
+          <p class="fs-sub">Your live booking calendar is open — pick a time that works for you.</p>
+          <button class="btn-primary btn-block" onclick="openBkModal()">Reopen Booking Calendar →</button>
+        </div>
       </div>
     </div>
   </section>
@@ -546,8 +586,8 @@
         <p class="section-sub" style="text-align:center;max-width:600px;margin:0 auto;">Odoo ERP + AI automations — one platform to run your entire business. Watch how it works.</p>
       </div>
       <div class="vid-wrap reveal">
-        <video class="vid-player" id="mainVid" autoplay muted playsinline>
-          <source src="video/video_ai_homepage.webm" type="video/webm"/>
+        <video class="vid-player" id="mainVid" autoplay muted playsinline preload="metadata" poster="video/poster.jpg">
+          <source src="video/video_ai_homepage.mp4" type="video/mp4"/>
         </video>
         <div class="vid-controls">
           <button class="vid-playbtn" id="vidPlayBtn" aria-label="Pause video">
@@ -579,102 +619,6 @@
       <div class="vid-cta reveal">
         <p>Ready to see it work for your business? Book a free 1-hour demo — no commitment required.</p>
         <a href="#" class="btn-primary" onclick="event.preventDefault();openBkModal();">Book Free Demo →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WHY TECHNEXT ────────────────────────────────────────── -->
-  <section id="why">
-    <div class="container">
-      <div class="sec-head center reveal">
-        <span class="eyebrow center">Why TechNext</span>
-        <h2 class="section-title">We Don't Just Install Software. We <span class="text-blue">Transform</span> Operations.</h2>
-        <p class="section-sub" style="text-align:center;margin:0 auto;max-width:680px;">Every engagement is led by a senior consultant who's seen the same growing pains — and knows exactly how to solve them.</p>
-      </div>
-      <div class="why-inner">
-        <div class="reveal">
-          <div class="why-list">
-            <div class="why-item active" onclick="switchWhy(0)">
-              <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"/></svg></div>
-              <div class="why-body">
-                <div class="why-title">Certified Odoo Partner</div>
-                <div class="why-text">Officially recognized by Odoo S.A. — trusted by businesses worldwide.</div>
-              </div>
-              <span class="why-chevron">›</span>
-            </div>
-            <div class="why-item" onclick="switchWhy(1)">
-              <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg></div>
-              <div class="why-body">
-                <div class="why-title">Built for Global Scale</div>
-                <div class="why-text">Multi-currency, multi-company, and built to operate across any market or timezone.</div>
-              </div>
-              <span class="why-chevron">›</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="reveal rd2 why-panel-wrap">
-          <div class="why-panel active" id="wp0">
-            <div class="wp-card">
-              <div class="wp-hd">
-                <div class="wp-hd-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"/></svg></div>
-                <div class="wp-hd-body">
-                  <div class="wp-hd-title">Certified Odoo Partner</div>
-                  <span class="wp-hd-badge">✓ Officially Verified by Odoo S.A.</span>
-                </div>
-                <img src="images/odoo_logo.png" alt="Odoo" style="height:44px;width:auto;opacity:.9;flex-shrink:0;"/>
-              </div>
-              <div class="wp-stats">
-                <div class="wp-stat"><div class="wp-stat-num">30+</div><div class="wp-stat-lbl">Implementations</div></div>
-                <div class="wp-stat"><div class="wp-stat-num">5★</div><div class="wp-stat-lbl">Client Rating</div></div>
-                <div class="wp-stat"><div class="wp-stat-num">100%</div><div class="wp-stat-lbl">Go-Live Rate</div></div>
-              </div>
-              <div>
-                <div style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Modules We Deploy</div>
-                <div class="wp-pills">
-                  <span class="wp-pill">Accounting</span><span class="wp-pill">Inventory</span><span class="wp-pill">CRM</span><span class="wp-pill">HR &amp; Payroll</span><span class="wp-pill">Manufacturing</span><span class="wp-pill">POS</span><span class="wp-pill">eCommerce</span><span class="wp-pill">Project</span>
-                </div>
-              </div>
-              <div class="wp-note">Custom module development &amp; third-party integrations included on every project — no hidden add-ons.</div>
-            </div>
-          </div>
-
-          <div class="why-panel" id="wp1">
-            <div class="wp-card">
-              <div class="wp-hd">
-                <div class="wp-hd-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg></div>
-                <div class="wp-hd-body">
-                  <div class="wp-hd-title">Built for Global Scale</div>
-                  <span class="wp-hd-badge">Worldwide Ready</span>
-                </div>
-              </div>
-              <div class="wp-countries">
-                <div class="wp-country">
-                  <div class="wp-flag">🟦</div>
-                  <div>
-                    <div class="wp-c-name">Odoo ERP — One Platform</div>
-                    <div class="wp-c-tags"><span class="wp-c-tag">Accounting &amp; CRM</span><span class="wp-c-tag">Inventory</span><span class="wp-c-tag">HR &amp; Payroll</span><span class="wp-c-tag">eCommerce</span></div>
-                  </div>
-                </div>
-                <div class="wp-country">
-                  <div class="wp-flag">⚡</div>
-                  <div>
-                    <div class="wp-c-name">AI Automations Built-In</div>
-                    <div class="wp-c-tags"><span class="wp-c-tag">Smart Invoicing</span><span class="wp-c-tag">AI Chatbots</span><span class="wp-c-tag">Lead Scoring</span><span class="wp-c-tag">Auto Forecasting</span></div>
-                  </div>
-                </div>
-                <div class="wp-country">
-                  <div class="wp-flag">☁️</div>
-                  <div>
-                    <div class="wp-c-name">Cloud-Ready &amp; Scalable</div>
-                    <div class="wp-c-tags"><span class="wp-c-tag">Any Device</span><span class="wp-c-tag">Multi-Company</span><span class="wp-c-tag">Real-Time Dashboards</span></div>
-                  </div>
-                </div>
-              </div>
-              <div class="wp-note">One connected system — Odoo ERP + AI automations — built to grow with your business, wherever you operate.</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -836,7 +780,7 @@
   <!-- ── FOOTER ──────────────────────────────────────────────── -->
   <footer id="contact">
     <div class="container footer-inner">
-      <a href="#hero" class="footer-brand"><img src="images/TechNext-Logo.png" alt="TechNext"/></a>
+      <a href="#hero" class="footer-brand"><img src="images/technext-logo-white.png" alt="TechNext"/></a>
       <span class="footer-copy">© 2026 TechNext Asia · technext.asia · All rights reserved</span>
       <nav class="footer-links" aria-label="Footer">
         <a href="#hero">Home</a>
@@ -854,7 +798,7 @@
       <div class="bk-left">
         <button class="bk-close" onclick="closeBkModal()" aria-label="Close">✕</button>
         <div class="bk-left-logo">
-          <img src="images/TechNext-Logo.png" alt="TechNext Asia"/>
+          <img src="images/technext-logo-white.png" alt="TechNext Asia"/>
         </div>
         <div class="bk-left-title">Talk to a TechNext Expert</div>
         <div class="bk-left-desc">We'll show you exactly how Odoo ERP + AI automations would work for your business. No sales pressure.</div>
@@ -874,73 +818,9 @@
         </div>
       </div>
 
-      <div class="bk-mid">
-        <div class="bk-cal-nav">
-          <span class="bk-cal-month" id="bkMonthLabel"></span>
-          <div class="bk-cal-arrows">
-            <button class="bk-cal-arr" onclick="bkNavMonth(-1)" aria-label="Previous">&#8249;</button>
-            <button class="bk-cal-arr" onclick="bkNavMonth(1)" aria-label="Next">&#8250;</button>
-          </div>
-        </div>
-        <div class="bk-cal-grid" id="bkGrid"></div>
-      </div>
-
-      <div class="bk-right" id="bkRight">
-        <div class="bk-right-head">
-          <div class="bk-right-date" id="bkRightDate">—</div>
-          <div class="bk-right-fmt">
-            <button class="bk-fmt-btn active" id="bkFmt12" onclick="bkSetFmt(12)">12h</button>
-            <button class="bk-fmt-btn" id="bkFmt24" onclick="bkSetFmt(24)">24h</button>
-          </div>
-        </div>
-        <div class="bk-slots-list" id="bkSlots"></div>
-      </div>
-
-      <div class="bk-foot">
-        <div class="bk-foot-row">
-          <div class="bk-sel-info" id="bkSelInfo">Pick a date and time</div>
-        </div>
-        <div class="bk-fields-row">
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Name</span>
-            <input class="bk-email-input" id="bkNameInput" type="text" placeholder="John Doe" oninput="bkCheckConfirm()"/>
-          </div>
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Contact Number</span>
-            <input class="bk-email-input" id="bkPhoneInput" type="tel" placeholder="+65 9123 4567" oninput="bkCheckConfirm()"/>
-          </div>
-        </div>
-        <div class="bk-fields-row">
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Email — confirmation sent here</span>
-            <input class="bk-email-input" id="bkEmailInput" type="email" placeholder="john@company.com" oninput="bkCheckConfirm()"/>
-          </div>
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Company <span style="font-weight:400;text-transform:none;">(optional)</span></span>
-            <input class="bk-email-input" id="bkCompanyInput" type="text" placeholder="Your company name"/>
-          </div>
-        </div>
-        <button class="bk-confirm-btn" id="bkConfirmBtn" disabled onclick="bkConfirm()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          Confirm Slot
-        </button>
-      </div>
-
-      <div class="bk-success" id="bkSuccess">
-        <div class="bk-success-anim">
-          <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-        </div>
-        <div class="bk-success-title">You're all set!</div>
-        <p class="bk-success-sub">Your slot is reserved. We'll send a calendar invite and confirmation to your email shortly.</p>
-        <div class="bk-success-detail">
-          <div class="bk-success-detail-label">Your demo is booked for</div>
-          <div class="bk-success-detail-slot" id="bkSuccessSlot">—</div>
-          <div class="bk-success-detail-meta">1 hour · Singapore Time · Free, no commitment</div>
-        </div>
-        <button class="bk-done-btn" onclick="closeBkModal()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          Done
-        </button>
+      <div class="bk-iframe-wrap">
+        <div class="bk-iframe-loading" id="bkIframeLoading">Loading live calendar…</div>
+        <iframe id="bkIframe" class="bk-iframe" title="Book a demo with TechNext — live Odoo calendar" onload="document.getElementById('bkIframeLoading').style.display='none';"></iframe>
       </div>
     </div>
   </div>
@@ -953,76 +833,21 @@
   <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
   <script>
-    /* ── Booking Modal Calendar ── */
-    const BK_MONTHS      = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    const BK_MONTHS_S    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const BK_DAYS_S      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    // Matches Odoo availability: 09:00–12:00 and 14:00–17:00 (1-hr duration, 30-min step)
-    const BK_TIMES_12    = ['9:00 am','10:00 am','11:00 am','2:00 pm','3:00 pm','4:00 pm'];
-    const BK_TIMES_24    = ['09:00','10:00','11:00','14:00','15:00','16:00'];
-    let bkViewYear, bkViewMonth, bkSelDate = null, bkSelTime = null, bkFmt = 12;
-
-    /* ── Booked slots from Odoo ── */
-    const BK_BOOKED_MAP  = {};  // 'YYYY-MM-DD_HH:MM' → true
-    const BK_SLOTS_DONE  = {};  // 'YYYY-M' → true (fetched)
-    const BK_SLOTS_BUSY  = {};  // 'YYYY-M' → true (in-flight)
-    const BK_API = 'https://tech-next-landing-page.vercel.app';
-
-    async function bkLoadSlots(year, month) {
-      const key = year + '-' + month;
-      if (BK_SLOTS_DONE[key] || BK_SLOTS_BUSY[key]) return;
-      BK_SLOTS_BUSY[key] = true;
-      try {
-        const r = await fetch(`${BK_API}/api/odoo-slots?year=${year}&month=${month + 1}`);
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const d = await r.json();
-        (d.booked || []).forEach(s => { BK_BOOKED_MAP[s] = true; });
-        BK_SLOTS_DONE[key] = true;
-        bkRenderCal();
-        if (bkSelDate) bkRenderSlots();
-      } catch (e) {
-        console.warn('bkLoadSlots:', e.message);
-      } finally {
-        BK_SLOTS_BUSY[key] = false;
-      }
-    }
+    /* ── Booking Modal — embeds the real, live Odoo scheduling page
+       (technext.odoo.com) directly, so occupied slots shown are always
+       the actual current calendar state, not a separately-tracked copy. ── */
+    const ODOO_BOOKING_URL = 'https://technext.odoo.com/book/c82cf8a9';
 
     function openBkModal() {
       document.getElementById('bkOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
-      const now = new Date();
-      bkViewYear = now.getFullYear();
-      bkViewMonth = now.getMonth();
-      bkSelDate = null; bkSelTime = null; bkFmt = 12;
-      document.getElementById('bkRight').classList.add('visible');
-      document.getElementById('bkRightDate').textContent = 'Select a date';
-      document.getElementById('bkSelInfo').textContent = 'Pick a date and time';
-      document.getElementById('bkConfirmBtn').disabled = true;
-      document.getElementById('bkFmt12').classList.add('active');
-      document.getElementById('bkFmt24').classList.remove('active');
-      bkCheckConfirm();
-      bkLoadSlots(bkViewYear, bkViewMonth);
-      bkRenderSlots();
-      bkRenderCal();
-    }
-
-    function bkCheckConfirm() {
-      const hasSlot  = bkSelDate && bkSelTime;
-      const hasName  = document.getElementById('bkNameInput').value.trim().length > 0;
-      const hasPhone = document.getElementById('bkPhoneInput').value.trim().length > 0;
-      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-        document.getElementById('bkEmailInput').value.trim()
-      );
-      document.getElementById('bkConfirmBtn').disabled = !(hasSlot && hasName && hasPhone && hasEmail);
+      const iframe = document.getElementById('bkIframe');
+      if (!iframe.src) iframe.src = ODOO_BOOKING_URL;
     }
 
     function closeBkModal() {
       document.getElementById('bkOverlay').classList.remove('open');
       document.body.style.overflow = '';
-      document.getElementById('bkSuccess').classList.remove('show');
-      document.querySelector('.bk-mid').style.display = '';
-      document.getElementById('bkRight').style.display = '';
-      document.querySelector('.bk-foot').style.display = '';
     }
 
     function bkOverlayClick(e) {
@@ -1030,260 +855,50 @@
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBkModal(); });
 
-    function bkNavMonth(dir) {
-      bkViewMonth += dir;
-      if (bkViewMonth > 11) { bkViewMonth = 0; bkViewYear++; }
-      if (bkViewMonth < 0)  { bkViewMonth = 11; bkViewYear--; }
-      bkLoadSlots(bkViewYear, bkViewMonth);
-      bkRenderCal();
+    /* ── Hero form ── */
+    let selectedService = null;
+
+    function pickService(el) {
+      document.querySelectorAll('.spick').forEach(s => s.classList.remove('sel'));
+      el.classList.add('sel');
+      selectedService = el.dataset.val;
+      document.getElementById('btnNext').disabled = false;
     }
 
-    function bkRenderCal() {
-      const label = document.getElementById('bkMonthLabel');
-      label.innerHTML = BK_MONTHS[bkViewMonth] + ' <span>' + bkViewYear + '</span>';
-      const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const firstDay = new Date(bkViewYear, bkViewMonth, 1);
-      const daysInMonth = new Date(bkViewYear, bkViewMonth + 1, 0).getDate();
-      let startDow = firstDay.getDay();
-      startDow = startDow === 0 ? 6 : startDow - 1;
-
-      const grid = document.getElementById('bkGrid');
-      grid.innerHTML = '';
-      ['MON','TUE','WED','THU','FRI','SAT','SUN'].forEach(d => {
-        const h = document.createElement('div');
-        h.className = 'bk-cal-dow'; h.textContent = d; grid.appendChild(h);
-      });
-      for (let i = 0; i < startDow; i++) {
-        const b = document.createElement('div'); b.className = 'bk-cal-day bk-disabled'; b.textContent = ''; grid.appendChild(b);
-      }
-      for (let d = 1; d <= daysInMonth; d++) {
-        const date = new Date(bkViewYear, bkViewMonth, d);
-        const dow  = date.getDay();
-        const isWeekend = dow === 0 || dow === 6;
-        const isPast    = date < today;
-        const isToday   = date.getTime() === today.getTime();
-        const isSel     = bkSelDate && date.getTime() === bkSelDate.getTime();
-        const el = document.createElement('div');
-        el.className = 'bk-cal-day';
-        el.textContent = d;
-        if (isWeekend || isPast) {
-          el.classList.add('bk-disabled');
-          el.innerHTML = '<span class="bk-day-num">' + d + '</span>';
-        } else {
-          const avail = bkGetAvailCount(date);
-          el.classList.add('bk-avail');
-          if (avail === 0) el.classList.add('bk-full-day');
-          if (isToday) el.classList.add('bk-today');
-          if (isSel)   el.classList.add('bk-sel');
-          const dotCls = avail === 0 ? 'bk-day-dot-full' : avail <= 4 ? 'bk-day-dot-low' : 'bk-day-dot-avail';
-          el.innerHTML = '<span class="bk-day-num">' + d + '</span><span class="bk-day-dot ' + dotCls + '"></span>';
-          el.addEventListener('click', () => bkPickDate(date));
-        }
-        grid.appendChild(el);
-      }
+    function goStep2() {
+      if (!selectedService) return;
+      document.getElementById('fstep1').classList.remove('active');
+      document.getElementById('fstep2').classList.add('active');
+      document.getElementById('dot1').classList.add('done');
+      document.getElementById('line1').classList.add('done');
+      document.getElementById('dot2').classList.add('active');
+      document.getElementById('formHeading').textContent = 'Tell Us About You';
+      document.getElementById('formSubhead').textContent = "We'll tailor the demo to your business.";
     }
 
-    function bkIsBooked(date, idx) {
-      const t = BK_TIMES_24[idx];
-      if (!t) return false;
-      const yyyy = date.getFullYear();
-      const mm   = String(date.getMonth() + 1).padStart(2, '0');
-      const dd   = String(date.getDate()).padStart(2, '0');
-      const now = new Date();
-      const isToday = yyyy === now.getFullYear() &&
-                      date.getMonth() === now.getMonth() &&
-                      date.getDate()  === now.getDate();
-      if (isToday) {
-        const [slotH, slotM] = t.split(':').map(Number);
-        if (slotH * 60 + slotM <= now.getHours() * 60 + now.getMinutes() + 60) return true;
-      }
-      return !!BK_BOOKED_MAP[`${yyyy}-${mm}-${dd}_${t}`];
-    }
-    function bkGetAvailCount(date) {
-      return BK_TIMES_12.filter((_, i) => !bkIsBooked(date, i)).length;
-    }
-    function bkFirstAvailIdx(date) {
-      return BK_TIMES_12.findIndex((_, i) => !bkIsBooked(date, i));
-    }
-    function bkFindNextAvailDate(fromDate) {
-      const now = new Date(); const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const d = new Date(fromDate);
-      for (let i = 1; i <= 45; i++) {
-        d.setDate(d.getDate() + 1);
-        const dow = d.getDay();
-        if (dow === 0 || dow === 6 || d < today) continue;
-        if (bkGetAvailCount(d) > 0) return new Date(d);
-      }
-      return null;
+    function goStep1() {
+      document.getElementById('fstep2').classList.remove('active');
+      document.getElementById('fstep1').classList.add('active');
+      document.getElementById('dot2').classList.remove('active');
+      document.getElementById('dot1').classList.remove('done');
+      document.getElementById('line1').classList.remove('done');
+      document.getElementById('formHeading').textContent = 'Book a Free Demo';
+      document.getElementById('formSubhead').textContent = '1 hour. No commitment. We show you exactly how it works.';
     }
 
-    function bkPickDate(date) {
-      bkSelDate = date; bkSelTime = null;
-      bkRenderCal();
-      document.getElementById('bkRight').classList.add('visible');
-      document.getElementById('bkRightDate').textContent = BK_DAYS_S[date.getDay()] + ' ' + String(date.getDate()).padStart(2,'0');
-      bkRenderSlots();
-      bkUpdateFooter();
-    }
+    function submitHeroForm() {
+      const fname = document.getElementById('f-fname').value.trim();
+      if (!fname) { alert('Please enter your name.'); return; }
+      const femail = document.getElementById('f-email').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(femail)) { alert('Please enter a valid email address.'); return; }
 
-    function bkSetFmt(fmt) {
-      bkFmt = fmt;
-      document.getElementById('bkFmt12').classList.toggle('active', fmt === 12);
-      document.getElementById('bkFmt24').classList.toggle('active', fmt === 24);
-      bkSelTime = null;
-      bkRenderSlots();
-      bkUpdateFooter();
-    }
-
-    function bkRenderSlots() {
-      const times = bkFmt === 12 ? BK_TIMES_12 : BK_TIMES_24;
-      const container = document.getElementById('bkSlots');
-      container.innerHTML = '';
-
-      if (!bkSelDate) {
-        times.forEach(t => {
-          const el = document.createElement('div');
-          el.className = 'bk-slot';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-          container.appendChild(el);
-        });
-        return;
-      }
-
-      const avail = bkGetAvailCount(bkSelDate);
-      const firstIdx = bkFirstAvailIdx(bkSelDate);
-
-      if (avail === 0) {
-        const wrap = document.createElement('div');
-        wrap.className = 'bk-full-wrap';
-        wrap.innerHTML = '<div style="font-size:28px">📅</div><div class="bk-full-title">Fully Booked</div><p class="bk-full-sub">All slots on this day are taken.</p>';
-        const nextDate = bkFindNextAvailDate(bkSelDate);
-        if (nextDate) {
-          const btn = document.createElement('button');
-          btn.className = 'bk-next-btn';
-          btn.innerHTML = '→ Next: ' + BK_DAYS_S[nextDate.getDay()] + ', ' + BK_MONTHS_S[nextDate.getMonth()] + ' ' + nextDate.getDate();
-          btn.onclick = () => {
-            bkViewYear = nextDate.getFullYear();
-            bkViewMonth = nextDate.getMonth();
-            bkPickDate(nextDate);
-            bkRenderCal();
-          };
-          wrap.appendChild(btn);
-        }
-        container.appendChild(wrap);
-        return;
-      }
-
-      const banner = document.createElement('div');
-      banner.style.gridColumn = '1 / -1';
-      banner.style.textAlign = 'center';
-      banner.style.fontSize = '11px';
-      banner.style.fontWeight = '700';
-      banner.style.padding = '5px 10px';
-      banner.style.borderRadius = '20px';
-      banner.style.marginBottom = '4px';
-      if (avail <= 4) {
-        banner.style.background = '#fff7ed'; banner.style.color = '#ea580c';
-        banner.textContent = '⚡ Only ' + avail + ' slots left today!';
-      } else {
-        banner.style.background = '#f0fdf4'; banner.style.color = '#16a34a';
-        banner.textContent = '✓ ' + avail + ' slots available';
-      }
-      container.appendChild(banner);
-
-      times.forEach((t, i) => {
-        const booked = bkIsBooked(bkSelDate, i);
-        const isRec  = !booked && i === firstIdx;
-        const el = document.createElement('div');
-        if (booked) {
-          el.className = 'bk-slot bk-booked';
-          el.innerHTML = '<span style="text-decoration:line-through;font-size:12px">' + t + '</span>';
-        } else if (isRec) {
-          el.className = 'bk-slot bk-recommended';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-        } else {
-          el.className = 'bk-slot';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-        }
-        container.appendChild(el);
-      });
-    }
-
-    function bkPickTime(time, el) {
-      bkSelTime = time;
-      document.querySelectorAll('.bk-slot').forEach(s => s.classList.remove('bk-sel'));
-      el.classList.add('bk-sel');
-      bkUpdateFooter();
-    }
-
-    function bkUpdateFooter() {
-      const info = document.getElementById('bkSelInfo');
-      const btn  = document.getElementById('bkConfirmBtn');
-      if (bkSelDate && bkSelTime) {
-        info.innerHTML = '<strong>' + BK_DAYS_S[bkSelDate.getDay()] + ', ' + BK_MONTHS_S[bkSelDate.getMonth()] + ' ' + bkSelDate.getDate() + '</strong> · <strong>' + bkSelTime + ' SGT</strong>';
-        bkCheckConfirm();
-      } else if (bkSelDate && bkGetAvailCount(bkSelDate) === 0) {
-        const next = bkFindNextAvailDate(bkSelDate);
-        info.innerHTML = next ? 'Fully booked — try <strong>' + BK_DAYS_S[next.getDay()] + ', ' + BK_MONTHS_S[next.getMonth()] + ' ' + next.getDate() + '</strong>' : 'Fully booked';
-        btn.disabled = true;
-      } else {
-        info.textContent = bkSelDate ? 'Pick a time →' : 'Pick a date and time';
-        btn.disabled = true;
-      }
-    }
-
-    function bkConfirm() {
-      if (!bkSelDate || !bkSelTime) return;
-
-      const btn = document.getElementById('bkConfirmBtn');
-      btn.disabled = true;
-      btn.textContent = 'Booking…';
-
-      const day  = BK_DAYS_S[bkSelDate.getDay()];
-      const mon  = BK_MONTHS_S[bkSelDate.getMonth()];
-      const date = bkSelDate.getDate();
-      const slot = day + ', ' + mon + ' ' + date + ' · ' + bkSelTime + ' SGT';
-
-      const name    = document.getElementById('bkNameInput').value.trim();
-      const phone   = document.getElementById('bkPhoneInput').value.trim();
-      const email   = document.getElementById('bkEmailInput').value.trim();
-      const company = document.getElementById('bkCompanyInput').value.trim();
-      const timeIdx    = (bkFmt === 12 ? BK_TIMES_12 : BK_TIMES_24).indexOf(bkSelTime);
-      const slotTime24 = BK_TIMES_24[timeIdx] || '';
-      const slotISO    = bkSelDate.getFullYear() + '-' +
-                         String(bkSelDate.getMonth()+1).padStart(2,'0') + '-' +
-                         String(bkSelDate.getDate()).padStart(2,'0');
-
-      // Note: uses BK_API absolute URL (not a relative path) so booking works
-      // correctly when this page is hosted on GitHub Pages, not just on Vercel.
-      fetch(`${BK_API}/api/book-appointment`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, company, slotISO, slotTime24 })
-      })
-      .then(r => r.json())
-      .then(data => {
-        if (data.error) throw new Error(data.error);
-        document.getElementById('bkSuccessSlot').textContent = slot;
-        document.querySelector('.bk-mid').style.display = 'none';
-        document.getElementById('bkRight').style.display = 'none';
-        document.querySelector('.bk-foot').style.display = 'none';
-        document.getElementById('bkSuccess').classList.add('show');
-        if (slotISO && slotTime24) {
-          BK_BOOKED_MAP[slotISO + '_' + slotTime24] = true;
-          bkRenderCal();
-        }
-      })
-      .catch(err => {
-        console.error('Booking error:', err);
-        btn.disabled = false;
-        btn.textContent = 'Confirm Slot';
-        alert('Something went wrong — please try again or contact us at hello@technext.asia');
-      });
+      document.getElementById('fstep2').classList.remove('active');
+      document.getElementById('fSuccess').style.display = 'block';
+      document.getElementById('dot2').classList.remove('active');
+      document.getElementById('dot2').classList.add('done');
+      document.getElementById('formHeading').textContent = 'All Set!';
+      document.getElementById('formSubhead').textContent = 'See you at your demo — talk soon!';
+      openBkModal();
     }
 
     /* ── Mobile nav toggle ── */
@@ -1337,37 +952,6 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-    /* ── Why tabs ── */
-    let _whyCur = 0;
-    function switchWhy(idx) {
-      _whyCur = idx;
-      document.querySelectorAll('.why-item').forEach((el, i) => el.classList.toggle('active', i === idx));
-      document.querySelectorAll('.why-panel').forEach((el, i) => el.classList.toggle('active', i === idx));
-    }
-
-    /* ── Why tabs auto-rotate ── */
-    (function(){
-      const TABS  = 2;
-      const DELAY = 4000;
-      let timer   = null;
-
-      function advance() {
-        _whyCur = (_whyCur + 1) % TABS;
-        switchWhy(_whyCur);
-      }
-      function startTimer() {
-        clearInterval(timer);
-        timer = setInterval(advance, DELAY);
-      }
-
-      const zone = document.querySelector('.why-inner');
-      if (zone) {
-        zone.addEventListener('mouseenter', () => clearInterval(timer));
-        zone.addEventListener('mouseleave', startTimer);
-      }
-      startTimer();
-    })();
 
     /* ── FAQ Accordion ── */
     function toggleFAQ(el) {
