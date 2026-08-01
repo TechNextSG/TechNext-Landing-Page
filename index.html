@@ -15,14 +15,14 @@
   <meta property="og:title" content="TechNext Asia — Odoo ERP & AI Automations for Growing Businesses"/>
   <meta property="og:description" content="Certified Odoo Partner delivering ERP implementation and AI automations for growing businesses worldwide. Go live in 4–8 weeks."/>
   <meta property="og:url" content="https://technextmarketing.github.io/TechNext-Landing-Page/"/>
-  <meta property="og:image" content="https://technextmarketing.github.io/TechNext-Landing-Page/images/TechNext-Logo.png"/>
+  <meta property="og:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png"/>
   <meta property="og:site_name" content="TechNext Asia"/>
   <meta property="og:locale" content="en_US"/>
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="TechNext Asia — Odoo ERP & AI Automations"/>
   <meta name="twitter:description" content="Certified Odoo Partner. ERP + AI automations for growing businesses worldwide. Go live in 4–8 weeks."/>
-  <meta name="twitter:image" content="https://technextmarketing.github.io/TechNext-Landing-Page/images/TechNext-Logo.png"/>
+  <meta name="twitter:image" content="https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png"/>
   <!-- Performance: preconnect + preload critical font -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -35,7 +35,7 @@
     "@type":"Organization",
     "name":"TechNext Asia",
     "url":"https://technextmarketing.github.io/TechNext-Landing-Page/",
-    "logo":"https://technextmarketing.github.io/TechNext-Landing-Page/images/TechNext-Logo.png",
+    "logo":"https://technextsg.github.io/TechNext-Landing-Page/images/technext-logo-blue.png",
     "description":"Certified Odoo Partner delivering ERP implementation and AI automations for growing businesses worldwide.",
     "email":"hello@technext.asia",
     "areaServed":"Worldwide",
@@ -118,13 +118,10 @@
     .rd1{transition-delay:.1s;} .rd2{transition-delay:.2s;} .rd3{transition-delay:.3s;} .rd4{transition-delay:.4s;}
 
     /* ── NAVBAR ───────────────────────────────────────────── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s,transform .35s ease,opacity .8s ease;}
-    nav.scrolled{background:transparent;border-color:transparent;box-shadow:none;}
-    nav.nav-hidden{transform:translateY(-100%);}
-    nav.nav-faded{opacity:0;pointer-events:none;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border-bottom:1px solid transparent;}
     .nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;}
     .logo{display:flex;align-items:center;}
-    .logo img{height:80px;width:auto;display:block;}
+    .logo img{height:34px;width:auto;display:block;}
     .logo span{color:var(--purple);}
     .nav-cta{display:flex;align-items:center;gap:12px;}
 
@@ -145,8 +142,8 @@
     .hero-desc{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:36px;max-width:480px;animation:fade-up .6s ease .2s both;}
     .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:36px;animation:fade-up .6s ease .3s both;}
     .hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap;animation:fade-up .6s ease .4s both;}
-    .htrust-odoo-logo{height:48px;width:auto;opacity:.7;display:block;cursor:pointer;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .3s,filter .3s,drop-shadow .3s;}
-    .htrust-odoo-logo:hover{opacity:1;filter:drop-shadow(0 4px 14px rgba(113,75,200,.35));}
+    .htrust-odoo-logo{height:92px;width:auto;display:block;cursor:pointer;transition:transform .35s cubic-bezier(.34,1.56,.64,1),filter .3s;}
+    .htrust-odoo-logo:hover{filter:drop-shadow(0 4px 14px rgba(113,75,200,.35));}
     .htrust-sep-line{width:1px;height:22px;background:var(--border-2);flex-shrink:0;}
     .htrust-tagline{font-size:14px;font-weight:500;color:var(--muted);font-style:italic;letter-spacing:.01em;}
 
@@ -549,13 +546,17 @@
     /* ── BOOKING MODAL ── */
     .bk-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:1001;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
     .bk-overlay.open{opacity:1;pointer-events:auto;}
-    .bk-modal{display:grid;grid-template-columns:230px 1fr;grid-template-rows:1fr auto;grid-template-areas:"left cal" "left foot";position:relative;border-radius:20px;width:min(940px,96vw);overflow:hidden;box-shadow:0 32px 96px rgba(0,0,0,.22);transform:scale(.95) translateY(20px);transition:transform .32s cubic-bezier(.34,1.56,.64,1);background:#fff;}
+    .bk-modal{display:grid;grid-template-columns:230px 1fr;position:relative;border-radius:20px;width:min(1000px,96vw);height:min(700px,92vh);overflow:hidden;box-shadow:0 32px 96px rgba(0,0,0,.22);transform:scale(.95) translateY(20px);transition:transform .32s cubic-bezier(.34,1.56,.64,1);background:#fff;}
     .bk-overlay.open .bk-modal{transform:scale(1) translateY(0);}
-    .bk-modal:has(.bk-right.visible){grid-template-columns:230px 1fr 190px;grid-template-areas:"left cal right" "left foot right";}
+    /* live Odoo scheduler pane */
+    .bk-iframe-wrap{position:relative;background:#fff;height:100%;overflow:hidden;}
+    .bk-iframe{width:100%;height:100%;border:none;display:block;}
+    .bk-iframe-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#fff;color:var(--muted);font-size:14px;font-weight:600;}
+    .bk-spinner{width:26px;height:26px;border:3px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite;}
     /* Left brand panel */
     .bk-left{background:linear-gradient(160deg,var(--purple) 0%,#4338ca 100%);grid-area:left;width:230px;padding:24px 22px;display:flex;flex-direction:column;position:relative;}
     .bk-left-logo{margin-bottom:26px;}
-    .bk-left-logo img{height:44px;width:auto;filter:brightness(0) invert(1);}
+    .bk-left-logo img{height:30px;width:auto;}
     .bk-left-tag{font-size:12px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
     .bk-left-title{font-family:var(--fh);font-size:20px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:12px;}
     .bk-left-desc{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:0;}
@@ -642,30 +643,12 @@
     .bk-mid-foot-wrap{display:flex;flex-direction:column;}
     @media(max-width:860px){
       .bk-overlay{align-items:flex-end;padding:0;}
-      .bk-modal{display:flex;flex-direction:column;width:100%;max-width:100%;max-height:90vh;overflow-y:auto;border-radius:20px 20px 0 0;margin:0;}
+      /* stack: compact brand bar on top, live Odoo calendar fills the rest */
+      .bk-modal{display:flex;flex-direction:column;width:100%;max-width:100%;height:92vh;max-height:92vh;overflow:hidden;border-radius:20px 20px 0 0;margin:0;}
       .bk-left{width:100%;padding:14px 16px;flex-direction:row;align-items:center;justify-content:center;gap:12px;flex-shrink:0;}
       .bk-left-desc,.bk-left-meta,.bk-left-tag,.bk-left-logo{display:none;}
       .bk-left-title{font-size:22px;margin:0;text-align:center;width:100%;}
-      /* Footer fields: full-width single-column */
-      .bk-fields-row{grid-template-columns:1fr;}
-      .bk-email-label{font-size:12px;}
-      .bk-email-input{font-size:15px;padding:12px 14px;}
-      .bk-sel-info{font-size:14px;}
-      .bk-confirm-btn{font-size:16px;padding:14px 20px;}
-      .bk-mid{flex-shrink:0;padding:0 8px;}
-      .bk-cal-nav{padding:14px 8px 8px;}
-      .bk-cal-grid{padding:0 4px 8px;gap:2px;}
-      .bk-cal-day{height:36px;font-size:12px;}
-      .bk-cal-dow{font-size:9px;padding-bottom:5px;}
-      .bk-right{width:100%;border-left:none;border-top:1px solid var(--border);padding:0 8px;}
-      .bk-right.visible{display:flex;flex-direction:column;}
-      .bk-right-head{padding:8px 8px 5px;}
-      .bk-right-date{font-size:13px;}
-      .bk-right-fmt{margin-top:6px;}
-      .bk-fmt-btn{font-size:11px;padding:4px 0;}
-      .bk-slots-list{display:grid;grid-template-columns:repeat(3,1fr);overflow-x:hidden;overflow-y:visible;padding:8px;gap:5px;max-height:none;}
-      .bk-slot{white-space:normal;flex-shrink:1;font-size:11px;padding:7px 4px;}
-      .bk-foot{flex-shrink:0;padding:12px 16px 20px;}
+      .bk-iframe-wrap{flex:1 1 auto;min-height:0;}
     }
     /* ── WHATSAPP FLOAT ── */
     .wa-float{position:fixed;bottom:84px;right:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:98;transition:transform .2s,box-shadow .2s;text-decoration:none;}
@@ -689,7 +672,7 @@
       .nav-cta .btn-primary{display:inline-flex;padding:8px 16px;font-size:12px;}
       .hamburger{display:flex;}
       .start-here{display:none;}
-      .logo img{height:52px;}
+      .logo img{height:24px;}
 
 
       /* Section padding */
@@ -755,7 +738,7 @@
       .hero-desc{font-size:14px;}
       .hero-trust{flex-direction:column;align-items:center;gap:8px;text-align:center;}
       .htrust-sep-line{display:none;}
-      .htrust-odoo-logo{height:52px;}
+      .htrust-odoo-logo{height:66px;}
       .htrust-tagline{font-size:13px;}
       .hero-form-wrap{padding:24px 18px 20px;}
       .form-heading{font-size:26px;}
@@ -822,7 +805,7 @@
   <!-- ── NAVBAR ─────────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="logo"><img src="images/TechNext-Logo.png" alt="TechNext"/></a>
+      <a href="#hero" class="logo"><img src="images/technext-logo-blue.png" alt="TechNext"/></a>
       <div class="nav-cta">
         <a href="#" onclick="event.preventDefault();openBkModal();" class="btn-primary" style="padding:10px 22px;font-size:13px;">Book Free Demo</a>
       </div>
@@ -1180,7 +1163,7 @@
                   <div class="wp-hd-title">Certified Odoo Partner</div>
                   <span class="wp-hd-badge">✓ Officially Verified by Odoo S.A.</span>
                 </div>
-                <img src="images/odoo_logo.png" alt="Odoo" style="height:56px;width:auto;opacity:.9;flex-shrink:0;"/>
+                <img src="images/odoo_logo.png" alt="Odoo" style="height:76px;width:auto;flex-shrink:0;"/>
               </div>
               <div class="wp-stats">
                 <div class="wp-stat"><div class="wp-stat-num">30+</div><div class="wp-stat-lbl">Implementations</div></div>
@@ -1567,7 +1550,7 @@
       <!-- LEFT: Brand panel -->
       <div class="bk-left">
         <div class="bk-left-logo">
-          <img src="images/TechNext-Logo.png" alt="TechNext Asia"/>
+          <img src="images/technext-logo-white.png" alt="TechNext Asia"/>
         </div>
         <div class="bk-left-title">Talk to a TechNext Expert</div>
         <div class="bk-left-desc">We'll show you exactly how Odoo ERP + AI automations would work for your business. No sales pressure.</div>
@@ -1587,77 +1570,14 @@
         </div>
       </div>
 
-      <!-- MIDDLE: Calendar -->
-      <div class="bk-mid">
-        <div class="bk-cal-nav">
-          <span class="bk-cal-month" id="bkMonthLabel"></span>
-          <div class="bk-cal-arrows">
-            <button class="bk-cal-arr" onclick="bkNavMonth(-1)" aria-label="Previous">&#8249;</button>
-            <button class="bk-cal-arr" onclick="bkNavMonth(1)" aria-label="Next">&#8250;</button>
-          </div>
+      <!-- LIVE Odoo scheduler — real availability in, real bookings out -->
+      <div class="bk-iframe-wrap">
+        <div class="bk-iframe-loading" id="bkIframeLoading">
+          <span class="bk-spinner"></span>
+          Loading live calendar…
         </div>
-        <div class="bk-cal-grid" id="bkGrid"></div>
-      </div>
-
-      <!-- RIGHT: Time slots (shown after date pick) -->
-      <div class="bk-right" id="bkRight">
-        <div class="bk-right-head">
-          <div class="bk-right-date" id="bkRightDate">—</div>
-          <div class="bk-right-fmt">
-            <button class="bk-fmt-btn active" id="bkFmt12" onclick="bkSetFmt(12)">12h</button>
-            <button class="bk-fmt-btn" id="bkFmt24" onclick="bkSetFmt(24)">24h</button>
-          </div>
-        </div>
-        <div class="bk-slots-list" id="bkSlots"></div>
-      </div>
-
-      <!-- FORM: Name, contact, email, confirm (below time slots on mobile) -->
-      <div class="bk-foot">
-        <div class="bk-foot-row">
-          <div class="bk-sel-info" id="bkSelInfo">Pick a date and time</div>
-        </div>
-        <div class="bk-fields-row">
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Name</span>
-            <input class="bk-email-input" id="bkNameInput" type="text" placeholder="John Doe" oninput="bkCheckConfirm()"/>
-          </div>
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Contact Number</span>
-            <input class="bk-email-input" id="bkPhoneInput" type="tel" placeholder="+65 9123 4567" oninput="bkCheckConfirm()"/>
-          </div>
-        </div>
-        <div class="bk-fields-row">
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Email — confirmation sent here</span>
-            <input class="bk-email-input" id="bkEmailInput" type="email" placeholder="john@company.com" oninput="bkCheckConfirm()"/>
-          </div>
-          <div class="bk-email-wrap">
-            <span class="bk-email-label">Company <span style="font-weight:400;text-transform:none;">(optional)</span></span>
-            <input class="bk-email-input" id="bkCompanyInput" type="text" placeholder="Your company name"/>
-          </div>
-        </div>
-        <button class="bk-confirm-btn" id="bkConfirmBtn" disabled onclick="bkConfirm()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          Confirm Slot
-        </button>
-      </div>
-
-      <!-- SUCCESS: Shown after Confirm Slot -->
-      <div class="bk-success" id="bkSuccess">
-        <div class="bk-success-anim">
-          <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-        </div>
-        <div class="bk-success-title">You're all set!</div>
-        <p class="bk-success-sub">Your slot is reserved. We'll send a calendar invite and confirmation to your email shortly.</p>
-        <div class="bk-success-detail">
-          <div class="bk-success-detail-label">Your demo is booked for</div>
-          <div class="bk-success-detail-slot" id="bkSuccessSlot">—</div>
-          <div class="bk-success-detail-meta">1 hour · Singapore Time · Free, no commitment</div>
-        </div>
-        <button class="bk-done-btn" onclick="closeBkModal()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-          Done
-        </button>
+        <iframe id="bkIframe" class="bk-iframe" title="Book a free demo with TechNext — live Odoo calendar"
+                onload="document.getElementById('bkIframeLoading').style.display='none';"></iframe>
       </div>
 
     </div>
@@ -1671,363 +1591,53 @@
   <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
   <script>
-    /* ── Booking Modal Calendar ── */
-    const BK_URL = 'https://erp.technext.asia/odoo/appointments';
-    const BK_MONTHS      = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    const BK_MONTHS_S    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const BK_DAYS_S      = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    // Matches Odoo availability: 09:00–12:00 and 14:00–17:00 (1-hr duration, 30-min step)
-    const BK_TIMES_12    = ['9:00 am','10:00 am','11:00 am','2:00 pm','3:00 pm','4:00 pm'];
-    const BK_TIMES_24    = ['09:00','10:00','11:00','14:00','15:00','16:00'];
-    let bkViewYear, bkViewMonth, bkSelDate = null, bkSelTime = null, bkFmt = 12;
+    /* ── Booking: connected to the live Odoo scheduler ──────────────────
+       The modal embeds https://technext.odoo.com/book/c82cf8a9 directly.
+       That means the availability a visitor sees IS Odoo's real-time
+       availability, and a confirmed booking lands straight in that Odoo
+       calendar — there is no separate copy of the schedule to drift.
 
-    /* ── Booked slots from Odoo ── */
-    const BK_BOOKED_MAP  = {};  // 'YYYY-MM-DD_HH:MM' → true
-    const BK_SLOTS_DONE  = {};  // 'YYYY-M' → true (fetched)
-    const BK_SLOTS_BUSY  = {};  // 'YYYY-M' → true (in-flight)
-    const BK_API = 'https://tech-next-landing-page.vercel.app';
+       Why embedded rather than fetched into a custom calendar: this page is
+       static (GitHub Pages) and Odoo sends no Access-Control-Allow-Origin
+       header, so a browser here is blocked from reading its slots. Pulling
+       slots into a bespoke calendar would require a server-side proxy
+       holding an Odoo API key — a key that cannot live in public page JS. */
+    const ODOO_BOOKING_URL = 'https://technext.odoo.com/book/c82cf8a9';
 
-    async function bkLoadSlots(year, month) {
-      const key = year + '-' + month;
-      if (BK_SLOTS_DONE[key] || BK_SLOTS_BUSY[key]) return;
-      BK_SLOTS_BUSY[key] = true;
-      try {
-        const r = await fetch(`${BK_API}/api/odoo-slots?year=${year}&month=${month + 1}`);
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        const d = await r.json();
-        (d.booked || []).forEach(s => { BK_BOOKED_MAP[s] = true; });
-        BK_SLOTS_DONE[key] = true;
-        bkRenderCal();
-        if (bkSelDate) bkRenderSlots();
-      } catch (e) {
-        console.warn('bkLoadSlots:', e.message);
-      } finally {
-        BK_SLOTS_BUSY[key] = false;
-      }
+    // Filled in by the hero form so Odoo's booking form can be pre-populated.
+    let lastFormDetails = null;
+
+    function odooBookingUrl() {
+      if (!lastFormDetails) return ODOO_BOOKING_URL;
+      const p = new URLSearchParams();
+      if (lastFormDetails.name)  p.set('name',  lastFormDetails.name);
+      if (lastFormDetails.email) p.set('email', lastFormDetails.email);
+      if (lastFormDetails.phone) p.set('phone', lastFormDetails.phone);
+      const q = p.toString();
+      return q ? `${ODOO_BOOKING_URL}?${q}` : ODOO_BOOKING_URL;
     }
 
     function openBkModal() {
       document.getElementById('bkOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
-      const now = new Date();
-      bkViewYear = now.getFullYear();
-      bkViewMonth = now.getMonth();
-      bkSelDate = null; bkSelTime = null; bkFmt = 12;
-      document.getElementById('bkRight').classList.add('visible');
-      document.getElementById('bkRightDate').textContent = 'Select a date';
-      document.getElementById('bkSelInfo').textContent = 'Pick a date and time';
-      document.getElementById('bkConfirmBtn').disabled = true;
-      document.getElementById('bkFmt12').classList.add('active');
-      document.getElementById('bkFmt24').classList.remove('active');
-      // Pre-fill from main form if available
-      const formName    = (document.getElementById('f-fname')   || {}).value || '';
-      const formPhone   = (document.getElementById('f-phone')   || {}).value || '';
-      const formEmail   = (document.getElementById('f-email')   || {}).value || '';
-      const formCompany = (document.getElementById('f-company') || {}).value || '';
-      document.getElementById('bkNameInput').value    = formName;
-      document.getElementById('bkPhoneInput').value   = formPhone;
-      document.getElementById('bkEmailInput').value   = formEmail;
-      document.getElementById('bkCompanyInput').value = formCompany;
-      bkCheckConfirm();   // enable Confirm button immediately if all fields pre-filled
-      bkLoadSlots(bkViewYear, bkViewMonth);
-      bkRenderSlots();
-      bkRenderCal();
-    }
-
-    function bkCheckConfirm() {
-      const hasSlot  = bkSelDate && bkSelTime;
-      const hasName  = document.getElementById('bkNameInput').value.trim().length > 0;
-      const hasPhone = document.getElementById('bkPhoneInput').value.trim().length > 0;
-      const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-        document.getElementById('bkEmailInput').value.trim()
-      );
-      document.getElementById('bkConfirmBtn').disabled = !(hasSlot && hasName && hasPhone && hasEmail);
+      const frame = document.getElementById('bkIframe');
+      const url = odooBookingUrl();
+      // (re)load when the URL changes, so details entered in the hero form carry over
+      if (frame.getAttribute('src') !== url) {
+        document.getElementById('bkIframeLoading').style.display = '';
+        frame.setAttribute('src', url);
+      }
     }
 
     function closeBkModal() {
       document.getElementById('bkOverlay').classList.remove('open');
       document.body.style.overflow = '';
-      // Reset success state for next open
-      document.getElementById('bkSuccess').classList.remove('show');
-      document.querySelector('.bk-mid').style.display = '';
-      document.getElementById('bkRight').style.display = '';
-      document.querySelector('.bk-foot').style.display = '';   // restore footer
     }
 
     function bkOverlayClick(e) {
       if (e.target === document.getElementById('bkOverlay')) closeBkModal();
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBkModal(); });
-
-    function bkNavMonth(dir) {
-      bkViewMonth += dir;
-      if (bkViewMonth > 11) { bkViewMonth = 0; bkViewYear++; }
-      if (bkViewMonth < 0)  { bkViewMonth = 11; bkViewYear--; }
-      bkLoadSlots(bkViewYear, bkViewMonth);
-      bkRenderCal();
-    }
-
-    function bkRenderCal() {
-      const label = document.getElementById('bkMonthLabel');
-      label.innerHTML = BK_MONTHS[bkViewMonth] + ' <span>' + bkViewYear + '</span>';
-      const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const firstDay = new Date(bkViewYear, bkViewMonth, 1);
-      const daysInMonth = new Date(bkViewYear, bkViewMonth + 1, 0).getDate();
-      let startDow = firstDay.getDay();
-      startDow = startDow === 0 ? 6 : startDow - 1; // Mon = 0
-
-      const grid = document.getElementById('bkGrid');
-      grid.innerHTML = '';
-      ['MON','TUE','WED','THU','FRI','SAT','SUN'].forEach(d => {
-        const h = document.createElement('div');
-        h.className = 'bk-cal-dow'; h.textContent = d; grid.appendChild(h);
-      });
-      for (let i = 0; i < startDow; i++) {
-        const b = document.createElement('div'); b.className = 'bk-cal-day bk-disabled'; b.textContent = ''; grid.appendChild(b);
-      }
-      for (let d = 1; d <= daysInMonth; d++) {
-        const date = new Date(bkViewYear, bkViewMonth, d);
-        const dow  = date.getDay();
-        const isWeekend = dow === 0 || dow === 6;
-        const isPast    = date < today;
-        const isToday   = date.getTime() === today.getTime();
-        const isSel     = bkSelDate && date.getTime() === bkSelDate.getTime();
-        const el = document.createElement('div');
-        el.className = 'bk-cal-day';
-        el.textContent = d;
-        if (isWeekend || isPast) {
-          el.classList.add('bk-disabled');
-          el.innerHTML = '<span class="bk-day-num">' + d + '</span>';
-        } else {
-          const avail = bkGetAvailCount(date);
-          el.classList.add('bk-avail');
-          if (avail === 0) el.classList.add('bk-full-day');
-          if (isToday) el.classList.add('bk-today');
-          if (isSel)   el.classList.add('bk-sel');
-          const dotCls = avail === 0 ? 'bk-day-dot-full' : avail <= 4 ? 'bk-day-dot-low' : 'bk-day-dot-avail';
-          el.innerHTML = '<span class="bk-day-num">' + d + '</span><span class="bk-day-dot ' + dotCls + '"></span>';
-          el.addEventListener('click', () => bkPickDate(date));
-        }
-        grid.appendChild(el);
-      }
-    }
-
-    function bkIsBooked(date, idx) {
-      const t = BK_TIMES_24[idx];
-      if (!t) return false;
-      const yyyy = date.getFullYear();
-      const mm   = String(date.getMonth() + 1).padStart(2, '0');
-      const dd   = String(date.getDate()).padStart(2, '0');
-      // Block past time slots for today (user's local time, assumed SGT)
-      const now = new Date();
-      const isToday = yyyy === now.getFullYear() &&
-                      date.getMonth() === now.getMonth() &&
-                      date.getDate()  === now.getDate();
-      if (isToday) {
-        const [slotH, slotM] = t.split(':').map(Number);
-        // Block if the slot start is ≤ now + 60 min (need at least 1 hr notice)
-        if (slotH * 60 + slotM <= now.getHours() * 60 + now.getMinutes() + 60) return true;
-      }
-      return !!BK_BOOKED_MAP[`${yyyy}-${mm}-${dd}_${t}`];
-    }
-    function bkGetAvailCount(date) {
-      return BK_TIMES_12.filter((_, i) => !bkIsBooked(date, i)).length;
-    }
-    function bkFirstAvailIdx(date) {
-      return BK_TIMES_12.findIndex((_, i) => !bkIsBooked(date, i));
-    }
-    function bkFindNextAvailDate(fromDate) {
-      const now = new Date(); const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const d = new Date(fromDate);
-      for (let i = 1; i <= 45; i++) {
-        d.setDate(d.getDate() + 1);
-        const dow = d.getDay();
-        if (dow === 0 || dow === 6 || d < today) continue;
-        if (bkGetAvailCount(d) > 0) return new Date(d);
-      }
-      return null;
-    }
-
-    function bkPickDate(date) {
-      bkSelDate = date; bkSelTime = null;
-      bkRenderCal();
-      document.getElementById('bkRight').classList.add('visible');
-      document.getElementById('bkRightDate').textContent = BK_DAYS_S[date.getDay()] + ' ' + String(date.getDate()).padStart(2,'0');
-      bkRenderSlots();
-      bkUpdateFooter();
-    }
-
-    function bkSetFmt(fmt) {
-      bkFmt = fmt;
-      document.getElementById('bkFmt12').classList.toggle('active', fmt === 12);
-      document.getElementById('bkFmt24').classList.toggle('active', fmt === 24);
-      bkSelTime = null;
-      bkRenderSlots();
-      bkUpdateFooter();
-    }
-
-    function bkRenderSlots() {
-      const times = bkFmt === 12 ? BK_TIMES_12 : BK_TIMES_24;
-      const container = document.getElementById('bkSlots');
-      container.innerHTML = '';
-
-      if (!bkSelDate) {
-        times.forEach(t => {
-          const el = document.createElement('div');
-          el.className = 'bk-slot';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-          container.appendChild(el);
-        });
-        return;
-      }
-
-      const avail = bkGetAvailCount(bkSelDate);
-      const firstIdx = bkFirstAvailIdx(bkSelDate);
-
-      if (avail === 0) {
-        const wrap = document.createElement('div');
-        wrap.className = 'bk-full-wrap';
-        wrap.innerHTML = '<div style="font-size:28px">📅</div><div class="bk-full-title">Fully Booked</div><p class="bk-full-sub">All slots on this day are taken.</p>';
-        const nextDate = bkFindNextAvailDate(bkSelDate);
-        if (nextDate) {
-          const btn = document.createElement('button');
-          btn.className = 'bk-next-btn';
-          btn.innerHTML = '→ Next: ' + BK_DAYS_S[nextDate.getDay()] + ', ' + BK_MONTHS_S[nextDate.getMonth()] + ' ' + nextDate.getDate();
-          btn.onclick = () => {
-            bkViewYear = nextDate.getFullYear();
-            bkViewMonth = nextDate.getMonth();
-            bkPickDate(nextDate);
-            bkRenderCal();
-          };
-          wrap.appendChild(btn);
-        }
-        container.appendChild(wrap);
-        return;
-      }
-
-      // Availability banner
-      const banner = document.createElement('div');
-      banner.style.gridColumn = '1 / -1';
-      banner.style.textAlign = 'center';
-      banner.style.fontSize = '11px';
-      banner.style.fontWeight = '700';
-      banner.style.padding = '5px 10px';
-      banner.style.borderRadius = '20px';
-      banner.style.marginBottom = '4px';
-      if (avail <= 4) {
-        banner.style.background = '#fff7ed'; banner.style.color = '#ea580c';
-        banner.textContent = '⚡ Only ' + avail + ' slots left today!';
-      } else {
-        banner.style.background = '#f0fdf4'; banner.style.color = '#16a34a';
-        banner.textContent = '✓ ' + avail + ' slots available';
-      }
-      container.appendChild(banner);
-
-      times.forEach((t, i) => {
-        const booked = bkIsBooked(bkSelDate, i);
-        const isRec  = !booked && i === firstIdx;
-        const el = document.createElement('div');
-        if (booked) {
-          el.className = 'bk-slot bk-booked';
-          el.innerHTML = '<span style="text-decoration:line-through;font-size:12px">' + t + '</span>';
-        } else if (isRec) {
-          el.className = 'bk-slot bk-recommended';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-        } else {
-          el.className = 'bk-slot';
-          el.innerHTML = '<span class="bk-day-num">' + t + '</span>';
-          el.addEventListener('click', () => bkPickTime(t, el));
-        }
-        container.appendChild(el);
-      });
-    }
-
-    function bkPickTime(time, el) {
-      bkSelTime = time;
-      document.querySelectorAll('.bk-slot').forEach(s => s.classList.remove('bk-sel'));
-      el.classList.add('bk-sel');
-      bkUpdateFooter();
-    }
-
-    function bkUpdateFooter() {
-      const info = document.getElementById('bkSelInfo');
-      const btn  = document.getElementById('bkConfirmBtn');
-      if (bkSelDate && bkSelTime) {
-        info.innerHTML = '<strong>' + BK_DAYS_S[bkSelDate.getDay()] + ', ' + BK_MONTHS_S[bkSelDate.getMonth()] + ' ' + bkSelDate.getDate() + '</strong> · <strong>' + bkSelTime + ' SGT</strong>';
-        bkCheckConfirm();
-      } else if (bkSelDate && bkGetAvailCount(bkSelDate) === 0) {
-        const next = bkFindNextAvailDate(bkSelDate);
-        info.innerHTML = next ? 'Fully booked — try <strong>' + BK_DAYS_S[next.getDay()] + ', ' + BK_MONTHS_S[next.getMonth()] + ' ' + next.getDate() + '</strong>' : 'Fully booked';
-        btn.disabled = true;
-      } else {
-        info.textContent = bkSelDate ? 'Pick a time →' : 'Pick a date and time';
-        btn.disabled = true;
-      }
-    }
-
-    function bkConfirm() {
-      if (!bkSelDate || !bkSelTime) return;
-
-      const btn = document.getElementById('bkConfirmBtn');
-      btn.disabled = true;
-      btn.textContent = 'Booking…';
-
-      const day  = BK_DAYS_S[bkSelDate.getDay()];
-      const mon  = BK_MONTHS_S[bkSelDate.getMonth()];
-      const date = bkSelDate.getDate();
-      const slot = day + ', ' + mon + ' ' + date + ' · ' + bkSelTime + ' SGT';
-
-      const name    = document.getElementById('bkNameInput').value.trim();
-      const phone   = document.getElementById('bkPhoneInput').value.trim();
-      const email   = document.getElementById('bkEmailInput').value.trim();
-      const company = document.getElementById('bkCompanyInput').value.trim() ||
-                       (document.getElementById('f-company') || {}).value?.trim() || '';
-      const service = document.querySelector('.spick.sel')?.dataset.val || '';
-      const timeIdx    = (bkFmt === 12 ? BK_TIMES_12 : BK_TIMES_24).indexOf(bkSelTime);
-      const slotTime24 = BK_TIMES_24[timeIdx] || '';
-      const slotISO    = bkSelDate.getFullYear() + '-' +
-                         String(bkSelDate.getMonth()+1).padStart(2,'0') + '-' +
-                         String(bkSelDate.getDate()).padStart(2,'0');
-
-      fetch('/api/book-appointment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, company, service, slotISO, slotTime24 })
-      })
-      .then(r => r.json())
-      .then(data => {
-        if (data.error) throw new Error(data.error);
-        // Show success screen
-        document.getElementById('bkSuccessSlot').textContent = slot;
-        document.querySelector('.bk-mid').style.display = 'none';
-        document.getElementById('bkRight').style.display = 'none';
-        document.querySelector('.bk-foot').style.display = 'none';
-        document.getElementById('bkSuccess').classList.add('show');
-        // Update form card
-        document.getElementById('dot3').classList.remove('active');
-        document.getElementById('dot3').classList.add('done');
-        document.querySelector('.form-heading').textContent = 'All Set!';
-        document.querySelector('.form-subhead').textContent = 'See you at your demo — talk soon!';
-        document.getElementById('fsPending').style.display = 'none';
-        document.getElementById('fsDone').style.display = 'block';
-        const slotEl = document.getElementById('fsDoneSlot');
-        if (slotEl) slotEl.textContent = slot;
-        // Mark slot as booked locally so calendar updates immediately
-        if (slotISO && slotTime24) {
-          BK_BOOKED_MAP[slotISO + '_' + slotTime24] = true;
-          bkRenderCal();
-        }
-      })
-      .catch(err => {
-        console.error('Booking error:', err);
-        btn.disabled = false;
-        btn.textContent = 'Confirm Booking';
-        alert('Something went wrong — please try again or contact us at hello@technext.asia');
-      });
-    }
 
 
     /* ── Smooth anchor scrolling ── */
@@ -2043,39 +1653,10 @@
       });
     });
 
-    /* ── Navbar scroll hide/show + idle fade ── */
-    const nav = document.getElementById('navbar');
+    /* ── Scroll-to-top button visibility ── */
     const stBtn = document.getElementById('scrollTop');
-    let lastY = 0;
-    let idleTimer = null;
-
-    function resetIdleFade(){
-      nav.classList.remove('nav-faded');
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(()=>{ nav.classList.add('nav-faded'); }, 3000);
-    }
-
-    // Start idle timer on load
-    idleTimer = setTimeout(()=>{ nav.classList.add('nav-faded'); }, 3000);
-
-    // Restore nav on mouse enter
-    nav.addEventListener('mouseenter', ()=>{
-      nav.classList.remove('nav-faded');
-      clearTimeout(idleTimer);
-    });
-    nav.addEventListener('mouseleave', resetIdleFade);
-
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      nav.classList.toggle('scrolled', y > 60);
-      stBtn.classList.toggle('show', y > 300);
-      if(y > 80){
-        nav.classList.toggle('nav-hidden', y > lastY);
-      } else {
-        nav.classList.remove('nav-hidden');
-      }
-      lastY = y;
-      resetIdleFade();
+      stBtn.classList.toggle('show', window.scrollY > 300);
     }, {passive:true});
 
     /* ── Scroll reveal ── */
@@ -2132,24 +1713,18 @@
       if (!femail) { alert('Please enter your email address so we can send your booking confirmation.'); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(femail)) { alert('Please enter a valid email address.'); return; }
 
-      const btn = document.querySelector('#fstep2 .btn-primary');
-      btn.disabled = true;
-      btn.innerHTML = '<svg style="animation:spin .8s linear infinite;width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Sending…';
-
-      try {
-        await fetch('/api/lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name:    fname,
-            phone:   document.getElementById('f-phone').value.trim(),
-            email:   document.getElementById('f-email').value.trim(),
-            company: document.getElementById('f-company').value.trim(),
-            message: document.getElementById('f-msg').value.trim(),
-            service: document.querySelector('.spick.sel')?.dataset.val || ''
-          })
-        });
-      } catch(e) { console.warn('Lead API:', e); }
+      // What the visitor typed is carried into Odoo's own booking form, so they
+      // don't retype it. Odoo is what actually records the lead + the meeting —
+      // there is no separate lead endpoint to fall out of sync (and the old
+      // /api/lead one returned 404 while silently reporting success).
+      lastFormDetails = {
+        name:    fname,
+        email:   femail,
+        phone:   document.getElementById('f-phone').value.trim(),
+        company: document.getElementById('f-company').value.trim(),
+        message: document.getElementById('f-msg').value.trim(),
+        service: document.querySelector('.spick.sel')?.dataset.val || ''
+      };
 
       document.getElementById('fstep2').classList.remove('active');
       document.querySelector('.form-heading').textContent = 'Book Your Slot';
@@ -2409,14 +1984,12 @@
           const t = 1 - dist/RADIUS;
           const scale = 1 + t*0.28;
           const lift  = -t*8;
-          const op    = 0.7 + t*0.3;
           const glow  = Math.round(t*18);
+          // opacity is deliberately left alone — the logo stays fully opaque
           logo.style.transform = `scale(${scale.toFixed(3)}) translateY(${lift.toFixed(1)}px)`;
-          logo.style.opacity   = op.toFixed(2);
           logo.style.filter    = `drop-shadow(0 ${glow}px ${glow*2}px rgba(113,75,200,${(t*.4).toFixed(2)}))`;
         } else {
           logo.style.transform = '';
-          logo.style.opacity   = '';
           logo.style.filter    = '';
         }
       });
