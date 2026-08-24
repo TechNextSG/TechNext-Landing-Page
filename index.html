@@ -355,6 +355,12 @@
     .cta-inner .section-sub{margin:0 auto 36px;}
     .cta-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
     .cta-note{margin-top:18px;font-size:13px;color:var(--muted);}
+    /* Final CTA — a single button straight into the booking calendar */
+    .cta-btn-wrap{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+    .cta-main-btn{background:var(--cta);color:#fff;border:none;border-radius:14px;padding:20px 46px;font-size:18px;font-weight:700;font-family:var(--fb);cursor:pointer;box-shadow:0 4px 24px rgba(135,90,123,.28);transition:background .2s,transform .18s,box-shadow .2s;animation:form-glow 3s ease-in-out infinite;}
+    .cta-main-btn:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 10px 34px rgba(135,90,123,.4);animation:none;}
+    .cta-main-btn:active{transform:translateY(0) scale(.98);}
+    .cta-btn-note{font-size:13px;color:var(--muted);}
     .cta-note span{color:var(--purple);font-weight:600;}
 
     /* ── FOOTER ───────────────────────────────────────────── */
@@ -837,7 +843,7 @@
         <div class="hero-form-wrap" id="bookingForm">
           <div class="form-tape-top"></div>
           <div class="form-heading">Book a Free Demo</div>
-          <div class="form-subhead">1 hour. No commitment. We show you exactly how it works.</div>
+          <div class="form-subhead">30-min online session. No commitment. We show you exactly how it works.</div>
 
           <div class="form-progress">
             <div class="fp-dot active" id="dot1"></div>
@@ -922,7 +928,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
               </div>
               <div class="fs-title" style="color:var(--purple);">Pick your slot</div>
-              <p class="fs-sub" style="margin-bottom:18px;">Select a date and time for your free 1-hour demo.</p>
+              <p class="fs-sub" style="margin-bottom:18px;">Select a date and time for your free 30-min online demo.</p>
               <button class="btn-primary" onclick="openBkModal()" style="margin:0 auto;display:inline-flex;align-items:center;gap:8px;padding:11px 24px;font-size:14px;">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="15" height="15"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
                 Open Booking Calendar
@@ -985,9 +991,9 @@
           <div class="stat-sub">zero disruption</div>
         </div>
         <div class="stat-item reveal rd4">
-          <div class="stat-num">0</div>
-          <div class="stat-lbl">Failed Implementations</div>
-          <div class="stat-sub">100% success rate</div>
+          <div class="stat-num">100%</div>
+          <div class="stat-lbl">Success Rate</div>
+          <div class="stat-sub">0 failed implementations</div>
         </div>
       </div>
     </div>
@@ -1044,7 +1050,7 @@
 
       <!-- Services CTA Simple -->
       <div class="svc-cta reveal">
-        <div class="svc-cta-title">See it live — free, 1 hour, no commitment.</div>
+        <div class="svc-cta-title">See it live — free, 30 min, online, no commitment.</div>
         <div class="svc-cta-sub">We'll show you exactly how Odoo + AI would work for your business.</div>
         <form class="cta-email-form" onsubmit="ctaEmailGo(event)">
           <input type="email" class="cta-email-input" placeholder="Enter your work email" required/>
@@ -1100,7 +1106,7 @@
       <!-- Video section CTA -->
       <div class="reveal" style="text-align:center;margin-top:48px;">
         <p style="font-family:var(--fh);font-size:clamp(34px,4vw,54px);font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.0;">Ready to see it work for your business?</p>
-        <p style="font-size:20px;color:var(--muted);margin-bottom:0;">Book a free 1-hour demo — no commitment required.</p>
+        <p style="font-size:20px;color:var(--muted);margin-bottom:0;">Book a free 30-min online demo — no commitment required.</p>
         <form class="cta-email-form" style="margin:24px auto 0;" onsubmit="ctaEmailGo(event)">
           <input type="email" class="cta-email-input" placeholder="Enter your work email" required/>
           <button type="submit" class="cta-email-btn">Book Free Demo →</button>
@@ -1277,7 +1283,7 @@
             <div class="pn-cb">✓</div>
             <div class="pn-content">
               <div class="pn-title">1. Discovery Call</div>
-              <div class="pn-text">We map your current workflows, pain points, and goals in a free 1-hour strategy session. No fluff — just honest diagnosis.</div>
+              <div class="pn-text">We map your current workflows, pain points, and goals in a free 30-min online strategy session. No fluff — just honest diagnosis.</div>
             </div>
             <div class="pn-time">Day 1</div>
           </div>
@@ -1455,14 +1461,6 @@
         <div class="faq-item reveal rd1">
           <div class="faq-tape"></div>
           <div class="faq-q" onclick="toggleFAQ(this)">
-            How long does implementation actually take?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
-          </div>
-          <div class="faq-a">Most implementations go live in 4–8 weeks. The timeline depends on the number of modules, your existing data, and how quickly your team can participate in review sessions. We give you a firm timeline after the discovery call — and we stick to it.</div>
-        </div>
-        <div class="faq-item reveal rd2">
-          <div class="faq-tape"></div>
-          <div class="faq-q" onclick="toggleFAQ(this)">
             Do I need to know anything about Odoo before starting?
             <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
           </div>
@@ -1477,14 +1475,6 @@
           <div class="faq-a">Adoption is our #1 focus. We involve key team members from day one, build the system around their actual workflows, and provide hands-on training. We don't disappear post-launch — we stay available for the first 30 days to ensure smooth adoption.</div>
         </div>
         <div class="faq-item reveal rd1">
-          <div class="faq-tape"></div>
-          <div class="faq-q" onclick="toggleFAQ(this)">
-            How much does it cost?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
-          </div>
-          <div class="faq-a">Every project is scoped individually — a 5-person service business has very different needs from a 50-person manufacturer. We provide a detailed proposal after the free discovery call. Most mid-sized implementations start from USD 5,000–8,000. ROI is typically achieved within 3–6 months.</div>
-        </div>
-        <div class="faq-item reveal rd2">
           <div class="faq-tape"></div>
           <div class="faq-q" onclick="toggleFAQ(this)">
             Can you integrate Odoo with our existing tools?
@@ -1511,11 +1501,11 @@
       <div class="cta-inner reveal">
 <div class="section-label center">Get Started</div>
         <h2 class="section-title">Your Competitors Are<br/><span class="hl">Already Using AI.</span><br/>Are You?</h2>
-        <p class="section-sub" style="max-width:720px;margin:0 auto;">Book a free 1-hour live demo. We'll show you exactly how Odoo + AI would work for your specific business — no commitment required.</p>
-        <form class="cta-email-form" onsubmit="ctaEmailGo(event)">
-          <input type="email" class="cta-email-input" id="ctaEmailInput" placeholder="Enter your work email" required/>
-          <button type="submit" class="cta-email-btn">Book Free Demo →</button>
-        </form>
+        <p class="section-sub" style="max-width:720px;margin:0 auto;">Book a free 30-min online demo. We'll show you exactly how Odoo + AI would work for your specific business — no commitment required.</p>
+        <div class="cta-btn-wrap">
+          <button type="button" class="cta-main-btn" onclick="openBkModal()">Book Free Demo →</button>
+          <div class="cta-btn-note">Free · No commitment · 30 min · Online</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1529,11 +1519,6 @@
           <a href="https://www.linkedin.com/company/technextasia/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">in</a>
           <a href="https://www.facebook.com/technextasia" target="_blank" rel="noopener" class="social-btn" title="Facebook">f</a>
           <a href="https://www.instagram.com/technextasia" target="_blank" rel="noopener" class="social-btn" title="Instagram">ig</a>
-        </div>
-        <div class="footer-legal">
-          <a href="privacy-policy.html">Privacy</a>
-          <span>·</span>
-          <a href="terms-and-conditions.html">Terms</a>
         </div>
       </div>
     </div>
@@ -1555,7 +1540,7 @@
         <div class="bk-left-meta">
           <div class="bk-left-meta-row">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-            1 hour
+            30 min · Online
           </div>
           <div class="bk-left-meta-row">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg>
@@ -1701,7 +1686,7 @@
       document.getElementById('line1').classList.remove('done');
       document.getElementById('dot1').classList.add('active');
       document.querySelector('.form-heading').textContent = 'Book a Free Demo';
-      document.querySelector('.form-subhead').textContent = '1 hour. No commitment. We show you exactly how it works.';
+      document.querySelector('.form-subhead').textContent = '30-min online session. No commitment. We show you exactly how it works.';
     }
 
     async function submitForm() {
@@ -2025,7 +2010,7 @@
             {
               emoji: '⏰',
               headline: "Don't lose your slot!",
-              sub: "Slots fill up fast. You're seconds away from locking in your free 1-hour demo — don't leave now.",
+              sub: "Slots fill up fast. You're seconds away from locking in your free 30-min online demo — don't leave now.",
               cta: '✅ Complete My Booking →'
             },
             {
@@ -2049,12 +2034,12 @@
             {
               emoji: '💰',
               headline: "Every day without ERP costs you money.",
-              sub: "Businesses using Odoo ERP cut operational costs by up to 40%. Your free 1-hour demo is one click away.",
+              sub: "Businesses using Odoo ERP cut operational costs by up to 40%. Your free 30-min online demo is one click away.",
               cta: '💡 Claim My Free Demo →'
             },
             {
               emoji: '⚡',
-              headline: "It only takes 1 hour to change everything.",
+              headline: "It only takes 30 minutes to change everything.",
               sub: "We'll show you exactly how Odoo + AI works for your business — no fluff, no guessing, no commitment.",
               cta: '✅ Complete My Booking →'
             },
@@ -2067,7 +2052,7 @@
             {
               emoji: '📉',
               headline: "Still managing things manually?",
-              sub: "Every manual process you run today is costing time and money. One 1-hour session could fix that — for free.",
+              sub: "Every manual process you run today is costing time and money. One 30-min online session could fix that — for free.",
               cta: '🚀 Book & Fix This Now →'
             },
             {
@@ -2171,7 +2156,7 @@
         <div class="exit-proof">
           <div class="exit-proof-item"><span class="exit-proof-num">4–8</span><span class="exit-proof-lbl">Weeks to Go-Live</span></div>
           <div class="exit-proof-item"><span class="exit-proof-num">40%</span><span class="exit-proof-lbl">Cost Reduction</span></div>
-          <div class="exit-proof-item"><span class="exit-proof-num">Free</span><span class="exit-proof-lbl">1-Hour Demo</span></div>
+          <div class="exit-proof-item"><span class="exit-proof-num">Free</span><span class="exit-proof-lbl">30-Min Online Demo</span></div>
         </div>
         <button class="exit-cta-btn" onclick="exitPopupBook()">📅 Book My Free Demo Now →</button>
         <button class="exit-dismiss" onclick="closeExitPopup()">No thanks, I'll figure it out myself</button>
