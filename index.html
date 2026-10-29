@@ -1575,7 +1575,7 @@
 
   <script>
     /* ── Booking: connected to the live Odoo scheduler ──────────────────
-       The modal embeds https://technext.odoo.com/book/c82cf8a9 directly.
+       The modal embeds https://technext.odoo.com/appointment/discovery-call-with-technext-2?invite_token=914012541b1242c1ae832faa66a6efdc&filter_appointment_type_ids=%5B2%5D& directly.
        That means the availability a visitor sees IS Odoo's real-time
        availability, and a confirmed booking lands straight in that Odoo
        calendar — there is no separate copy of the schedule to drift.
@@ -1585,7 +1585,7 @@
        header, so a browser here is blocked from reading its slots. Pulling
        slots into a bespoke calendar would require a server-side proxy
        holding an Odoo API key — a key that cannot live in public page JS. */
-    const ODOO_BOOKING_URL = 'https://technext.odoo.com/book/c82cf8a9';
+    const ODOO_BOOKING_URL = 'https://technext.odoo.com/appointment/discovery-call-with-technext-2?invite_token=914012541b1242c1ae832faa66a6efdc&filter_appointment_type_ids=%5B2%5D&';
 
     // Filled in by the hero form so Odoo's booking form can be pre-populated.
     let lastFormDetails = null;
